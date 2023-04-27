@@ -1,0 +1,28 @@
+
+@font-face {
+    font-family: 'neurimboGothicRegular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/neurimboGothicRegular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+    font-family: 'neurimboGothicRegular';
+    
+}
+
+#bigbox{
+    border: 4px solid yellow;
+    border-style:dotted;
+    background-color:aqua;
+}
+
+
+#text1{
+    color: pink;
+    text-align:center;
+}
+
+
+
+

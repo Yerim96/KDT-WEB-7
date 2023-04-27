@@ -1,0 +1,67 @@
+.inline {
+    /* 스판태그처럼 같은 인라인(가로) 영역에 데이터를 올릴 수있다 */
+    
+    /* 인라인은 영역이 없지만 인라인블럭은 영역이 있다 */
+    display:inline-block; 
+
+    height: 100px;
+}
+
+.block{
+    display: block;
+    width:100px;
+    height:100px;
+}
+
+/* flex는 모든것이 인라인블럭이다 */
+.box{
+    width: 20px;
+    height: 20px;
+    background-color: red;
+
+    /* 블럭끼리 간격 띄우기 */
+    margin: 5px;
+}
+
+/* 자동으로 인라인블럭처리됨 */
+.flex_box{
+    display: flex;
+    
+    /* 가운데정렬 */
+    /* justify-content: center; */
+
+    /* body 사이즈에 맞게 요소들의 일정간격 자동계산후 띄워주기 */
+    justify-content: space-around;
+    
+    /* 끝과 끝 기준으로 간격설정 */
+    /* justify-content: space-between; */
+
+    /* 블럭기준 가운데,상단,하단정렬 */
+    /* align-items: center; */
+    align-items: start;
+    /* align-items: end; */
+    
+
+}
+
+.circle{
+    width:30px;
+    height:30px;
+    /* 앱솔루트는 바디중앙을 중심으로 움직인다 */
+    /* position: absolute; */
+    position: fixed;
+    border-radius: 15px;
+    background-color: red;
+    top:-10px;
+    left:5px;
+    /* right: 10px;
+    bottom: 10px; */
+
+    /* 가로,세로,번짐순 */
+    box-shadow: 1px 1px 2px gray;
+}
+
+p{
+    text-shadow: 1px 1px 2px gray;
+    letter-spacing: 10px;
+}

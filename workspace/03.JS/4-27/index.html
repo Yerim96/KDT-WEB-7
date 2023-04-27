@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // console.log('안녕하세요')
+        // alert("반갑습니다")
+        // var kdt ="네";
+        // console.log(kdt);
+        // kdt="네니오";
+        // console.log(kdt);
+
+
+        // let개념
+        // let kdt=23;
+        // console.log("test",kdt);
+        // test=30;
+        // console.log("test",test);
+
+        // //const 개념
+        // const value = 10;
+        // console.log('value:',value);
+
+
+        // //자료형
+        // console.log(typeof('안녕하세요'));
+        // console.log(typeof(23));
+        // console.log(typeof(false));
+        // console.log(typeof({}));
+        // console.log('d',typeof(null));
+
+        // //형변환
+        // console.log("check: ", typeof(String(true)));
+        // console.log("check: ", typeof(true.toString()));
+        // console.log("check: ", typeof(Number("23")));
+        // console.log(typeof(parseInt('2002')));
+
+        // var text="안녕하세요";
+        // var num = 222;
+        // var bool =false;
+        // var nul =null;
+
+        // var ogj={ 
+        //     name:"yerim",
+        //     born:'인천',
+        //     age:20,
+        //     move:function(){
+        //         return "퇴근";
+        //     }
+
+        // }
+        // console.log(ogj.move());
+
+        // var arr = [1,2,3,4,5,6,7,8,9,10,11];
+        // var cutarr=arr.splice(3);
+        // console.log(cutarr);
+        
+        // console.log(1=="1");
+        // console.log(1==="1"); //자바스크립트에만 있는 대입연산자
+
+
+        //삼항연산자
+        const a= 10;
+        const b= 20;
+        const c= 30;
+
+        // a<b가 참이면 내부 삼항연산자를 실행시킴
+        a<b ? a>c ? console.log('참입니다1.') :console.log('거짓입니다1.'):console.log('거짓입니다.');
+        
+
+        //단축실행
+        b>a && console.log('참입니다.');   //참일때만 실행함.
+
+        function test(a){
+            const obj ={
+                name : a || "기본이름"
+            }
+            console.log(obj.name)
+        }
+        test("이름")
+        test()
+        
+    </script>
+</body>
+</html>

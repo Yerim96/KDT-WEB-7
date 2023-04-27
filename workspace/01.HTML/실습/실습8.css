@@ -1,0 +1,123 @@
+.circle{
+    width:100px;
+    height:100px;
+    border-radius: 100px;
+}
+
+#circle1{
+    background-color: darkblue;
+    position:relative;
+    left: 40px;
+}
+#circle1-2{
+    /* background-color: rgb(36,31,255); */
+    background-color: white;
+    width:30px;
+    height:30px;
+    position: absolute;
+    left:20px;
+    top:20px;
+}
+#circle1-3{
+    background-color: black;
+    width:20px;
+    height:20px;
+    position: absolute;
+    left:10px;
+    top:10px;
+}
+#circle2{
+    background-color: darkcyan;
+    position: absolute;
+    left:70px;
+    top:20px;
+    
+}
+#circle3{
+    background-color: darkgoldenrod;
+    position: absolute;
+    left:70px;
+    top:40px;
+}
+#circle4{
+    background-color: darkgray;
+    position: absolute;
+    left:50px;
+    top:10px;
+
+    /* margin:20px, 50px; 상하,좌우 간격 같게 맞추기 */
+    
+}
+#circle5{
+    background-color: darkgreen;
+    position: absolute;
+    left:50px;
+    top:-10px;
+    z-index:10;
+
+}
+
+#back{
+    background-image: url("https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA4MDZfNTEg%2FMDAxNjU5NzQzOTE1ODE3.4ol0pvee6TXCwc6F-bkPa1StdB9jSFd0WiTR_TQbBSsg.hJgZJQ16opD1rGQSKCBUtlN9IScxO0W27sONThnSOksg.JPEG.sthemt55%2F1659741934000.jpg&type=a340");
+    width: 500px;
+    height: 300px;
+    background-size:cover;
+    background-repeat:no-repeat;
+}
+
+/* 강사님 코드
+.circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    position: absolute;
+}
+.circle1 {
+    background-color: rgb(73, 91, 150);
+    top:40px;
+    left: 10px;
+}
+.circle2 {
+    background-color: rgb(36,61, 206);
+    top: 93px;
+    left: 44px;
+}
+.circle3 {
+    background-color: rgb(52,118, 231);
+    top: 111px;
+    left: 79px;
+}
+.circle4 {
+    background-color: rgb(47,146, 233);
+    top: 112px;
+        left: 137px;
+}
+.circle5 {
+    background-color: rgb(10, 63, 110);
+    top: 107px;
+    left: 196px;
+    z-index: 10;
+}
+.white {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 20px;
+    top: 10px;
+    left: 20px;
+    position: absolute;
+}
+.black {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    position: absolute;
+    background-color: black;
+    top: 10px;
+}
+.grass {
+    width: 100px;
+    position: absolute;
+    width: 260px;
+    top: 127px;
+} */

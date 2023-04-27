@@ -1,0 +1,35 @@
+#circle{
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    background-color: aqua;
+    position:absolute;
+
+    animation-name: move;
+
+    /* n초마다 움직임 */
+    animation-duration: 2s; 
+
+    animation-iteration-count: 10;
+
+    /* animation-timing-function: ease-in; */
+    
+}
+
+@keyframes move {
+    /* 수동으로 움직임을 지정해주는것은 timing function이 먹지 않는다. */
+    /* 0%{left:0px; top:0px;}
+    25%{left:100px; top:0px;}
+    50%{left:200px; top:0px;}
+    75%{left:100px; top:0px;}
+    100%{left:0px; top:0px;} */
+    
+    from,to{left:0px;
+    animation-timing-function: ease;
+    }
+    50%{left:200px;
+    animation-timing-function: ease-in;
+    
+    }
+}
+

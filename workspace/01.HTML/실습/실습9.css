@@ -1,0 +1,18 @@
+.marvle{
+    position: absolute;
+    transform: skewY(30deg);
+}
+
+.marvle1{top:10px;
+left:100px;
+z-index: 100;
+}
+.marvle2{top:10px;
+    left:100px;
+    z-index: 50;
+}
+.marvle3{top:10px;
+    left:100px;
+    z-index: 1;
+
+}

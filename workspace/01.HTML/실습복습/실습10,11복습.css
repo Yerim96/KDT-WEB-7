@@ -1,0 +1,75 @@
+body{
+    width: 1000px;
+    height: 1000px;
+}
+#circle{
+    margin-top:100px;
+    width:100px;
+    height:100px;
+    
+    /* 바디를 기준으로함 */
+    position:absolute;
+    background-color: aqua;
+    border-radius:100px;
+
+    /* animation 속성 */
+     /* animation 설정 단축형태 name duration count timing순*/
+    animation: move2 2s 10 ease-in;
+
+}
+
+/* 애니메이션 상태를 나타내는 키 프레임 */
+ @keyframes move2{
+    0%{left:0; top:0}
+    25%{left:100px; top:0px}
+    50%{left:100px; top:100px }
+    75%{left:0px; top:100px}
+    100%{left:0px; top:0px}
+} 
+
+
+#circle1{
+    width:100px;
+    height:100px;
+    position: relative;
+    background-color: blue;
+    border-radius:100px;
+    animation:move3 3s 3;
+    animation-timing-function:ease;
+}
+
+@keyframes move3{
+    from{
+        left:200px;
+
+    }
+
+    to{
+        left:0px;
+    }
+}
+
+
+#text{
+    margin-top:200px;
+    width:80%;
+    height:120px;
+    position:absolute;
+    animation:move4 3s 3;
+    animation-timing-function:ease;
+
+}
+
+
+
+@keyframes move4{
+    from{
+        left:100%;
+        width: 1000px;
+    }
+
+    to{
+        left:0px;
+        width: 200px;
+    }
+}

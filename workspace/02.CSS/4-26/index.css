@@ -1,0 +1,24 @@
+#hello {
+    /* color: blue;
+    color: #FF0000; */
+    color: rgb(123,123,123);
+    /* color: rgba(123,123,123,0.1); */
+}
+/*contain : 이미지가 잘리거나 찌그러지지 않는 한도 내에서
+제일 크게 설정됩니다.
+cover: 이미지가 찌그러지지 않는 한도 내에서 제일 크게 설정됩니다.
+이미지의 가로, 세로비가 요소와 다르다면 이미지를 세로 또는 가로방향으로
+잘라내어 빈 공간이 생기기 않도록 설정합니다.
+*/
+#back {
+    /* background-image: url("cat-7489398_1920.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 100vh; */
+    background-color: black;
+    color:yellow;
+    text-align: center;
+ }
+ #hi {
+    color: red;
+ }

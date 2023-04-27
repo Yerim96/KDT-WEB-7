@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function</title>
+</head>
+<body>
+    <script>
+        function helloWorld(){
+            console.log("안녕하세요");
+        }
+        helloWorld();
+
+        // good(); //오류
+        const good = function(){
+            console.log("자스");
+        }
+        good();
+
+        const arrow = ()=>{
+            console.log("화살표 함수!");
+        }
+        arrow();
+        
+        const value = function(){
+            return "집에 가고싶다";
+        }
+        console.log(value());
+
+        function returnfunc(a,b){
+            return a+b;
+        }
+        const value1 = returnfunc(1,2);
+        //const value= a+b;
+        console.log(value1);
+
+        function cal(a,b){
+            return a-b;
+        }
+
+
+
+    </script>
+</body>
+</html>
