@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom_index</title>
+</head>
+<body>
+    <div id="hello" class="hi" name="good">안녕하세요</div>
+    <div id="come" class="hi">어서오세요</div>
+    <div id="world">Helloworld</div>
+    <a href="http://www.naver.com" target="_blank">이동</a>
+    <script>
+        // document를 사용해 이벤트를 가져올 수 있다.
+        console.log(document.head);
+        console.log(document.getElementsByTagName('div'));
+        console.log(document.getElementById('hello'));
+        console.log(document.getElementsByClassName('hi'));
+        console.log(document.getElementsByName('good'));
+        console.log(document.querySelector('.hi')); //css선택자로 가지고옴
+        // console.log(document.querySelector('#come')); //css선택자로 가지고옴
+        // console.log(document.querySelectorAll('.hi')); //css선택자로 가지고옴
+        // document.write("안");
+        
+        // document.querySelector('#come').innerHTML="컴컴";
+        // console.log(document.querySelectorAll('.hi')[0]); //css선택자로 가지고옴
+        // document.querySelectorAll('.hi')[0].innerHTML="helloworld"; //css선택자로 가지고옴
+
+        // document.getElementById('world').className='hi'; //동적분리.속성값 추가
+        // const world = document.getElementById('world');
+        //속성값을 가져오거나 설정할 경우
+        //가져오는 경우 getAttribute()
+        //설정하는 경우 setAttribute()
+        // console.log(world);
+        // console.log(world.getAttribute('class')); //클래스나 아이디를 getAttribute로 가져온다. href태그를 가져와서 링크르
+
+        // const link=document.querySelector('#link');
+        //위코드와 동일하지만 변수선언 없이빠르게 바꿔주기
+        // document.querySelector('#link').href="https://google.com";
+
+        // console.log(link);
+        // console.log(link.getAttribute('href'));
+        // link.setAttribute('href','https://google.com');
+        // link.href = "https://www.daum.net";
+
+    
+        // world.style.color="red"; //스타일을 바꿀때는 객체형태로 바꾼다.
+        // world.style.fontWeight="bold";
+        // console.log(world.getAttribute('stlye'));
+
+        // const p = document.createElement('p').innerHTML="새로생성";
+        // const p = document.createElement('p').innerHTML="로그인성공";
+        // const p = document.createElement('p');
+        
+        //append() 객체 또는 텍스트 추가, 여러개 가능
+        //appendChild() 객체 또는 텍스트 추가, 한개만 가능
+        // world.append(p);
+        // world.appendChild(p);
+        // world.remove(); //객체날리기 
+
+        // const login= false;
+
+        // login=== false && world.remove()
+        // login ? world.append(p) : world.remove()
+        </script>
+    <!-- //스크립트 파일을 참조할경우 실행이 이미 다 된 script src 뒤에 div가 오면 값이 읽히지 않음 scrip가 뒤에 와야함. defer를 사용해 예방할 수 있음 -->
+    <!-- <script src="index.js"></script> -->
+</body>
+</html>

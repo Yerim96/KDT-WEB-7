@@ -8,6 +8,12 @@
 </head>
 <body>
     <script>
+        // 변수 명명 규칙
+        // 1.숫자로 시작할 수 없다.
+        // 2. 특수문자 $ , _만 사용 가능
+        // 3.예약어 사용 금지(const var 등)
+        // 낙타표기법으로 의미있게 지음 helloWorld
+
         // console.log('안녕하세요')
         // alert("반갑습니다")
         // var kdt ="네";
@@ -73,7 +79,7 @@
         a<b ? a>c ? console.log('참입니다1.') :console.log('거짓입니다1.'):console.log('거짓입니다.');
         
 
-        //단축실행
+        //단축실행 .주로 로그인에 사용함. db에서 많이 쓰임. 값이들어가지 않은 null값일시 많이 사용
         b>a && console.log('참입니다.');   //참일때만 실행함.
 
         function test(a){
@@ -82,9 +88,40 @@
             }
             console.log(obj.name)
         }
-        test("이름")
-        test()
+        test("이름");
+        test();
+
+        // 
+        console.log("1번", 3!=='3'); //true (형을안봐서)
+        console.log("2번",8/'2'!==4); //false 
+        console.log("3번", 0===false); //number와 blooean이기 때문에 값은 false
+        console.log("4번", ('1'+2)===12); //false
+
+        if(false){
+            console.log("true입니다")
+        }else{
+            console.log("false입니다.")
+        }
         
+
+        let age=10;
+
+        if(age>=20){
+            console.log("성인");
+        }else if(age>=17){
+            console.log("고등학생");
+
+        }else if(age>=14){
+            console.log("중학생");
+
+        }else if(age>=8){
+            console.log("초등학생");
+
+        }else{
+            console.log("유아")
+        }
+
+   
     </script>
 </body>
 </html>
