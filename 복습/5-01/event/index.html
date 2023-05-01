@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div onclick="alert('div 태그를 클릭')">클릭</div>
+    <button id="button">버튼</button>
+    <div id="mouseover">마우스를 올리세요</div>
+    <button id="button2">이벤트 리스너</button>
+    <button id="button3">마우스 엔터</button>
+
+    <button class="btn">bt1</button>
+    <button class="btn">bt2</button>
+    <button class="btn">bt3</button>
+    <button class="btn">bt4</button>
+    <button class="btn">bt5</button>
+
+    <script>
+        const btn = document.getElementById("button");
+        btn.onclick = function(){
+            alert('버튼태그를 클릭');
+        }
+
+        const over = document.getElementById('mouseover');
+        function onMouseOver(){
+            console.log("마우스 오버");
+            
+            over.style.color="red";
+        }
+        over.onmouseover=onMouseOver;
+
+        function onMouseOut(){
+            over.style.color="blue";
+        }
+        over.onmouseout=onMouseOut;
+
+
+        // addEventListener
+
+        const bt2= document.querySelector('#button2');
+        bt2.addEventListener('click',
+        function(){
+            alert('이벤트 리스너 방식');
+        });
+
+
+        function onMouseEnter(){
+            alert('on mouse event 방식입니다.');
+            const divs= document.createElement('div');
+            bt2.append(divs);
+        }
+        const btn3 =document.querySelector("#button3");
+        btn3.addEventListener('mouseenter',onMouseEnter);
+
+        //응용
+        const btns= document.querySelectorAll('.btn');
+        function bgcolor(){
+            this.style.backgroundColor="blue";
+        }
+
+        for(let btn of btns){
+            console.log(btn);
+            btn.addEventListener('click',bgcolor);
+        }
+    </script>
+</body>
+</html>

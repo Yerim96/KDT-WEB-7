@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+   
+</head>
+    <div id="div1">안녕하세요</div>
+    <button onclick="submitjavascript()">변환1</button>
+    <button onclick="submitjavascript()">변환2</button>
+    
+    <!-- value값은 form처리할때 많이씀 -->
+    <h2>val()</h2>
+    <input type="text"/>
+    <button onclick="getValue()">값 가져오기</button>
+    <button onclick="setValue()">값 설정하기</button>
+    <br />
+
+
+    
+    <h2>css()</h2>
+    <div id="change">변경해주세요</div>
+    <button onclick="changeJs()">js로 바꾸기</button>
+    <button onclick="changeJquery()">jquery로 바꾸기</button>
+    <button onclick="getJquery()">jquery css값 가져오기</button>
+    
+    <br />
+    
+    <!-- 속성값을 바꾸기 위해 사용-->
+    <h2>attr()</h2>
+    <a href="https://www.naver.com" target="_blank" id="move">이동하세요</a>
+    <button onclick="changeAttr()">주소바꾸기</button>
+    <button onclick="changeAttrJs()">js로 주소바꾸기</button>
+    
+    <h2>text()</h2>
+    <p id="text">안녕하세요</p>
+    <button onclick="changeTextJs()">Js바꾸기</button>
+    <button onclick="changeTextJQuery()">Jquery바꾸기</button>
+    <br />
+
+    <h2>html()</h2>
+    <p id="html">반갑습니다.</p>
+    <button onclick="changeHtmlJs()">Js바꾸기</button>
+    <button onclick="changeHtmlJQuery()">Jquery바꾸기</button>
+    
+    <!-- 제이쿼리는 동적 처리가 많아 밑쪽에 스크립트를 연동함 -->
+    <script src="index.js"> </script>
+    </script>
+</body>
+</html>

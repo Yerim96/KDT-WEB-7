@@ -5,11 +5,51 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <script src="숫자게임.js"></script> -->
-
-    <title>Document</title>
+    <style>
+        button{
+            background-color: aqua;
+            color:white;
+            border-color:aqua;
+        }
+    </style>
+    <title>숫자게임</title>
 </head>
 <body>
-    <button>게임 시작하기</button>
- 
+    <button id="bt1" onclick="startGame();">게임 시작하기</button>
+    <script>
+        
+        function startGame(){
+            let answer=Math.round(Math.random()*10);
+            console.log(answer);
+            let guessValue = prompt('Up and Down 게임을 시작합니다!');
+            let a= String(guessValue);
+            console.log(a);
+            console.log(typeof(a));
+            while(true){
+                if(guessValue==='q'){
+                    alert('포기하셨습니다.');
+                    break;
+                }else if(guessValue==answer){
+                    alert(answer+"!!"+"정답입니다!");
+                    break;
+                }else if(Number(guessValue) >answer){
+                    alert("Down");
+                    // let guessValue = prompt('Up and Down 게임을 시작합니다!');
+                        // alert(answer+"!!"+"정답입니다!");
+                       
+                }else if(Number(guessValue) <answer){
+                    alert("Up")
+                    // let guessValue = prompt('Up and Down 게임을 시작합니다!');
+                        // alert(answer+"!!"+"정답입니다!");
+                }
+            }
+            }
+
+            
+
+            
+        
+        
+    </script>
 </body>
 </html>

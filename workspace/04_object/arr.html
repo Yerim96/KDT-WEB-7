@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr=[1,2,3,];
+        const arr2=[
+            [1,2,3],
+            [4,5,6],
+            [7,8,9]
+        ];
+        console.log(arr2[0][1]);
+
+
+        const obj={
+            name:"홍길동",
+            age:20,
+            "hi-1": "안녕하세요",
+
+        }
+        console.log(obj.age);
+        console.log(obj['name']); //키값이 특수문자일때 접근
+        console.log(obj['hi-1']);
+        obj['gender'] ='man'; //특수문자는 문자열
+        obj.contry='korea';
+        console.log(obj);
+
+        
+
+    </script>
+    
+</body>
+</html>

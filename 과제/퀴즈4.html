@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .text-center{
+            text-align: center;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <h2 class="text-center">이달의 맛 BEST9</h2>
+    <section class="text-center">
+        <!-- <article class="article-box">
+            <img src="icecream1.png" class="img-box">
+            <h3 class="text-center">Top1</h3>
+            <div class="text-center">내가 아인슈페너?!</div>
+        </article> -->
+    </section>
+
+    <script>
+        const icecreams = [
+        '내가 아인슈페너?!',
+        '엄마는 외계인',
+        '민트 초콜릿 칩',
+        '뉴욕 치즈케이크',
+        '아이스 초당옥수수',
+        '초콜릿 무스',
+        '체리쥬빌레',
+        '뮤! 넌 내거야',
+        '오레오 쿠키 앤 크림',
+      ];
+        
+        
+
+        const section=document.querySelectorAll('.text-center')[1];
+        console.log(section);
+        const article=document.createElement('article');
+        article.setAttribute('class','article-box');
+        console.log(article);
+        
+        //형제 section에 넣어줌.
+        section.append(article);
+        
+        for(let i=1; i<=9; i++){
+            //article에 img, h3, div 태그 넣기
+            // img src="icecream1.png" class="img-box">
+            //     <h3 class="text-center">Top1</h3>
+            //     <div class="text-center">내가 아인슈페너?!</div>
+            const img= document.createElement('img'); //태그 추가
+            img.setAttribute('class','img-box'); //태그 속성 추가
+            img.src=`icecream${i}.png`; //이미지 추가.
+            article.append(img);
+
+            const h3= document.createElement('h3');
+            h3.setAttribute('class','text-center');
+            h3.innerText=`Top${i}`;
+            article.append(h3);
+
+            const div=document.createElement('div');
+            div.setAttribute('class','text-center');
+            div.innerText=icecreams[i-1];
+            console.log(div);
+            article.append(div);
+
+
+        }
+        
+
+
+
+
+
+    </script>
+</body>
+</html>

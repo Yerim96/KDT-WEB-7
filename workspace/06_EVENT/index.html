@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+</head>
+<body>
+    <!-- 이벤트 처리방식
+    1.인라인속성
+    2.객체로 가져와서 function 처리 - onxxxxx으로 처리-->
+    <!--1. 인라인속성 -->
+    <!-- 인라인은 정확한 방식을 처리할수없다 -->
+    <!-- <div onclick="alert('div 태그를 클릭')">클릭</div>
+    <button id="button">버튼</button>
+    <div id="mouseover">마우스 올리세요</div>
+    <button id="button2">이벤트리스너</button>
+    <button id="button3">마우스엔터</button> -->
+     
+    <button class="btn">bt1</button>
+    <button class="btn">bt2</button>
+    <button class="btn">bt3</button>
+    <button class="btn">bt4</button>
+    <button class="btn">bt5</button>
+
+
+    <script>
+        //  <!--2. onxxxx으로 처리 -->
+        // const btn = document.getElementById('button');
+        // btn.onclick = function(){
+        //     alert('버튼태그를 클릭')
+        // }
+
+        // const over = document.getElementById('mouseover');
+        // function onMouseOver(){
+        //     console.log("마우스 오버");
+            
+        //     over.style.color="red";
+        // }
+        // //mdn  홈페이지 마우스이벤트 는 html 이벤트안에있다.
+        // function onMouseOut(){
+        
+        //     over.style.color="blue";
+        // }
+        // over.onmouseover = onMouseOver; //함수 실행이 아니라 이벤트처리이기 때문에 ()로 실행사키지 않는다.
+        // over.onmouseout = onMouseOut; //over.객체(정해져있는 함수명)
+        
+        
+        // // 3번째방법 addEventListener방식 -->
+        // const btn2= document.querySelector('#button2');
+        // btn2.addEventListener('click',function(){ //addEventListener(함수명(on없이), 실행시킬기능)
+        //     alert("이벤트 리스너 방식입니다.")
+        // })
+        
+        // function onMouseEnter(){
+        //     // alert('on mouse event입니다.');
+        //     const divs= document.createElement('div'); 
+        //     btn2.append(divs); //동적방식은 생성되고 정적방식은 생성x
+        // }
+        // const btn3 =document.querySelector('#button3');
+        // btn3.addEventListener('mouseenter', onMouseEnter); 
+
+
+    //    응용
+        const btns =document.querySelectorAll('.btn');
+        function bgcolor(){
+            //this=나자신. 함수가 속해있던 객체 참조
+            //클릭된 자기자신을 참조해서 색바꿈- callback함수. callback안에는 this가있다.
+            this.style.backgroundColor="blue";
+        }
+
+        for(let btn of btns){ //오브젝트 가져오기
+            console.log(btn);
+            btn.addEventListener('click',bgcolor);
+        }
+
+        
+    </script>
+</body>
+</html>

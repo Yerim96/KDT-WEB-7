@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kbevent</title>
+    <style>
+        #circle{
+            width:100px;
+            height:100px;
+            border-radius:100px;
+            background-color: red;
+            position: relative;
+
+        }
+    </style>
+</head>
+<body>
+    <!-- <input id="keyboard"></input>
+    <input id="circle"></input>  -->
+    
+    <!-- form이벤트
+     어디로 데이터를 보낼건지 form action으로 정함.  -->
+     <!--목적지의 주소-->
+    <!-- <form action="/" id="todo-form">  -->
+        <!-- input의 기본타입은 text -->
+        <!-- <input type ='text' name="todo"> 
+        <button>Add</button>
+    </form> -->
+
+    <!-- 제출한것들 넣어줌 -->
+    <!-- <ul class="todos"></ul>  -->
+    <!-- <input type="text" id="change-input">
+    <div class="intro"><div> -->
+
+        <div class="container">
+            <ul>
+                <li class="todo">1, 해야할일</li>
+                <li class="todo">2, 해야할일</li>
+                <li class="done">3, 완료한 일</li>
+                <li class="done">4, 완료한 일</li>
+                <li class="done">5, 완료한 일</li>
+            </ul>
+        </div>
+    <script>
+         //키값적용하려면 input이여야함.
+        // const keyboard= document.querySelector('#keyboard');
+
+        // keyboard.addEventListener('keydown',function(event){ //익명함수지만 사용은 콜백함수.
+        //     // console.log(event.code); 
+
+        //     if(event.code =='ArrowUp'){
+        //         console.log('up');
+        //     }
+
+
+        //     const circle = document.querySelector('#circle');
+        //     circle.addEventListener('keydown',function(e){
+        //         if(e.code == 'ArrowRight'){
+        //             circle.style.left="100px";
+        //         }
+        //     })
+        // })
+        
+            // //todo form가져오기
+            // const todoForm= document.querySelector('#todo-form');
+            // const todos= document.querySelector('.todos');
+            //     console.log(todoForm);
+
+            //     //form은 거의 summit이벤트를 건다. 
+            //     todoForm.addEventListener('submit',function(e){
+                   
+            //         //submit 을 중지시킨다. 데이터를 처리후 날려줘야하기 때문이다.
+            //         e.preventDefault(); 
+            //         // console.log(e);
+
+            //         const todoInput= document.querySelector('input[name=todo]'); //name 가져오기
+            //         console.log(todoInput.value); //input에 해당하는 값 가져오기
+            //         const todo = todoInput.value;
+            //         const newTodo= document.createElement('li');
+            //         newTodo.append(todo); //새로만든 li태그에 입력값 넣음.
+            //         todos.append(newTodo);
+            //         // todoInput.value='';
+            //     });
+
+        
+            // // change
+            // const cinputs=document.querySelector('#change-input');
+            // // cinputs.addEventListener('change', function(){
+            // //     console.log("변경되었습니다.")
+            // // })
+            
+            // //미리보기
+            // cinputs.addEventListener('input',function(){
+            //     let div =document.querySelector('.intro');
+            //     div.textContent=this.value;
+            // })
+
+            const i =document.querySelectorAll('li');
+            for(let li of i){
+                //toggle은 있으면 없애고 없애면 생성함.
+                li.classList.toggle('done');
+                li.calssList.toggle('todo');
+            }
+            
+    </script>
+</body>
+</html>

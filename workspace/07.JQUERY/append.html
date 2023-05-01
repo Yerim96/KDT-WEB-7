@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 제이쿼리 사용시 꼭 외부 script불러와야함 !!!!! -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+
+    <title>Document</title>
+</head>
+<body>
+    <!-- 선택된 요소 -->
+    <ul class="colors">
+        <li class="orange">orange</li>
+        <li class="green">green</li>
+        <li class="navy">navy</li>
+    </ul>
+    <h7>append() - 선택된 요소의 자식 요소중 마지막에 추가</h7>
+    <button onclick="appendJs()">js바꾸기</button>
+    <button onclick="appendJquery()">jquery바꾸기</button>
+
+    <br />
+    
+    <h7>prepend() - 선택된 요소의 자식 요소중 맨 앞에 추가</h7>
+    <button onclick="prependJs()">js바꾸기</button>
+    <button onclick="prependJquery()">jquery바꾸기</button>
+    
+    <br />
+
+    <h7>before() - 선택된 요소의 형제이면서 이전 형제(앞)에 추가</h7>
+    <button onclick="beforeJs()">js바꾸기</button>
+    <button onclick="beforeJquery()">jquery바꾸기</button>
+
+    <br />
+    
+    <h7>after() - 선택된 요소의 형제이면서 다음 형제로 추가</h7>
+    <button onclick="afterJs()">js바꾸기</button>
+    <button onclick="afterJquery()">jquery바꾸기</button>
+    
+    <br />
+    <ul class="nums">
+        <li>1</li>
+        <li id="li2">2</li>
+        <li>3</li>
+    </ul>
+    
+    
+    <h7>remove() - 선택된 요소의 Dom을 삭제</h7>
+    <button onclick="removeJs()">JS바꾸기(지우기)</button>
+    <button onclick="removeJquery()">Jquery바꾸기(지우기)</button>
+
+    <br />
+    <h7>empty() - 선택한 요소의 자식 요소를 모두 삭제</h7>
+    <button onclick="emptyJs()">JS바꾸기(지우기)</button>
+    <button onclick="emptyJquery()">Jquery바꾸기(지우기)</button>
+    
+    
+    <script src="append.js"></script>
+    <!-- 제이쿼리가 동적이라 스크립트를 밑에?? 정확히 무슨말이징 -->
+
+
+</body>
+</html>
