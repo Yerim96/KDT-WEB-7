@@ -20,7 +20,7 @@
         const parent= document.getElementById('parent');
         console.log(hello1);
         console.log(hello2);
-        console.log(parent);
+        // console.log(parent);
 
 
         // //동적추가 div만들고, 클래스들 추가해줌.
@@ -34,15 +34,15 @@
         //before는 요소의 형제면서 앞.
         // parent.before(divs);
 
-        // console.log(hello1.length);
-        // console.log(hello2.length);
+        console.log(hello1.length);
+        console.log(hello2.length);
 
-        for(let i=0; i<hello1.length; i++){ 
-            //가져온 클래스 이름 바꾸기
-            hello1[i].className ='hell';
-            //HTMLCollection 동적은 모두 바꿔지지 않고,
-            //nodeLIST는 SelectorAll은 정적이기 때문에 모두 바뀐다.
-            }
+        // for(let i=0; i<hello1.length; i++){ 
+        //     //가져온 클래스 이름 바꾸기
+        //     hello1[i].className ='hell';
+        //     //HTMLCollection 동적은 모두 바꿔지지 않고,
+        //     //nodeLIST는 SelectorAll은 정적이기 때문에 모두 바뀐다.
+        //     }
 
         // for(let i =0; i<10; i++){
         //     if(i%2 == 0){

@@ -79,3 +79,69 @@ function emptyJs(){
 function emptyJquery(){
     $('.nums').empty();
 }
+
+
+//요소탐색
+//부모찾기
+function findParent(){
+    console.log($('.child2').parent())
+}
+
+
+function findParents(){
+    console.log($('.child2').parent())
+
+}
+
+function findNex(){
+    console.log($('.child2').next())
+}
+function findPre(){
+    console.log($('.child2').prev())
+
+}
+
+function findChildren(){
+    console.log($('.parent').children())
+}
+
+// 클래스 추가
+function addClassJS(){
+    const p=document.querySelector('.origin-class');
+    p.classList.add('add-class'); 
+}
+function addClass(){
+    $('.origin-class').addClass('add-class')
+}
+function removeClassJs(){
+    let p = document.querySelector(".origin-class")
+    p.classList.remove('origin-class')
+}   
+function removeClass(){
+    $('.origin-class').removeClass('origin-class')
+    
+}
+
+// 클래스 유무 확인
+function hasClass(){
+    console.log($('.origin-class').hasClass('add-class'))
+    // console.log($('body').hasClass('.origin-class'));
+    
+}
+function hasClassJS(){
+    const p=document.querySelector('.origin-class');
+    console.log(p.classList.contains('origin-class'));
+}
+
+// 토글로 요소 제어
+function toggleClass(){
+    $('.origin-class').toggleClass('add-class');
+}
+
+function toggleClassJS(){
+    let p = document.querySelector('.origin-class');
+    p.classList.toggle('add-class');
+}
+
+
+

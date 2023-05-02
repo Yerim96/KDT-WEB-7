@@ -8,6 +8,90 @@
     <title>object_re</title>
 </head>
 <body>
+    <!-- 첫번쨰 div의 id는 hello, class는 hi, name은 good으로 설정한뒤 text내용은 안녕하세요
+     -->
+
+     <div id="hello" class="hi" name="good">안녕하세요</div>
+     <!-- 두번째 div의 id는 come, class는 hi, text내용은 어서요세요 -->
+     <div id="come" class="hi">어서오세요</div>
+     <!-- 세번쨰 div의 id는 world, 내용은 Helloworld -->
+     <div id="world">Helloworld</div>
+     <!-- a태그를 사용해 새로운 창으로 연결되는 링크를 걸고, text내용은 이동 -->
+     <a href="https://www.naver.com/" target="_blank">이동</a>
+    <script>
+        //docuemnt로 요소를 가져오기
+        //div태그 가져오기
+        let div=document.getElementsByTagName('div');
+        console.log(div);
+        //hello아이디 가져오기
+        let hello = document.getElementById('hello');
+        console.log(hello);
+        //good 이름 가져오기
+        let good = document.getElementsByName('good');
+        console.log(good);
+        //클래스 hi가져오기
+        let hi= document.getElementsByClassName('hi');
+        console.log(hi);
+        //id come 출력
+        let come = document.getElementById('come');
+        console.log(come);
+        //모든 hi클래스 출력
+        let hiall = document.getElementsByClassName('hi');
+        console.log(hiall);
+        document.write('복습파일');
+        //come id가져오고 바로 컴컴으로 text내용 바꾸기
+        come.innerText="컴컴";
+        //모든 hi클래스중 0번째, 즉첫번째 요소 뽑아내기
+        console.log(hiall[0]);
+        //위의 0번쨰 요소에서 text를 helloworld로 수정하기.
+        hiall[0].innerHTML="helloworld";
+        //world id와 className동적분리한후 속성추가하기.
+
+        document.getElementById('world').className='hi';
+        //const world에 id 가져오기
+        const world = document.getElementById('world');
+        console.log(world);
+        //id 가져온 world에 class속성추가
+        // world.setAttribute('class');
+        
+
+
+
+        //const link로 link id가져오고 콘솔에 찍기
+        //link로 얻어온값에 href가져오기 
+        //link의 href값을 google로 바꾸어주기
+
+        //객체형태로 world의 color를 red로 바꿔주기
+        world.style.color="red";
+        //객체형태로 world의 굵기(fontWeight)를 두껍게 바꿔주기
+        world.style.fontWeight="bold";
+        //콘솔에 world의 style값 가져오기
+
+        //p태그 만들고 text넣기
+        const i= document.createElement('p').innerHTML="그만하고싶어";
+        const o= document.createElement('p').innerHTML="젭알";
+        const p = document.createElement('p');
+        //world 안에 p넣어보기 
+        world.append(i,o);
+        //p를 여러개 넣어보기
+        //단 하나만 넣어보기
+        // world.appendChild(p);
+        // let qi=document.querySelector('p');
     
-</body>
+
+        
+        //객체 날리기
+
+
+        //login이 실패
+        const login=false;
+        //만약 login이 실패라면
+        login === false && world.remove()
+        //world에 추가된 객체를 지워라.
+        
+        //만약 로그인이 성공이라면 world에 p를 넣어보고, 그렇지않으면 객체를 지워라.
+
+
+    </script>
+    </body>
 </html>

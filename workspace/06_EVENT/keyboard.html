@@ -53,6 +53,7 @@
         //     if(event.code =='ArrowUp'){
         //         console.log('up');
         //     }
+        // })
 
 
         //     const circle = document.querySelector('#circle');
@@ -61,28 +62,28 @@
         //             circle.style.left="100px";
         //         }
         //     })
-        // })
+    
         
-            // //todo form가져오기
-            // const todoForm= document.querySelector('#todo-form');
-            // const todos= document.querySelector('.todos');
-            //     console.log(todoForm);
+            //todo form가져오기
+            const todoForm= document.querySelector('#todo-form');
+            const todos= document.querySelector('.todos');
+                console.log(todoForm);
 
-            //     //form은 거의 summit이벤트를 건다. 
-            //     todoForm.addEventListener('submit',function(e){
+                //form은 거의 summit이벤트를 건다. 
+                todoForm.addEventListener('submit',function(e){
                    
-            //         //submit 을 중지시킨다. 데이터를 처리후 날려줘야하기 때문이다.
-            //         e.preventDefault(); 
-            //         // console.log(e);
+                    //submit 을 중지시킨다. 데이터를 처리후 날려줘야하기 때문이다.
+                    e.preventDefault(); 
+                    // console.log(e);
 
-            //         const todoInput= document.querySelector('input[name=todo]'); //name 가져오기
-            //         console.log(todoInput.value); //input에 해당하는 값 가져오기
-            //         const todo = todoInput.value;
-            //         const newTodo= document.createElement('li');
-            //         newTodo.append(todo); //새로만든 li태그에 입력값 넣음.
-            //         todos.append(newTodo);
-            //         // todoInput.value='';
-            //     });
+                    const todoInput= document.querySelector('input[name=todo]'); //name 가져오기
+                    console.log(todoInput.value); //input에 해당하는 값 가져오기
+                    const todo = todoInput.value;
+                    const newTodo= document.createElement('li');
+                    newTodo.append(todo); //새로만든 li태그에 입력값 넣음.
+                    todos.append(newTodo);
+                    // todoInput.value='';
+                });
 
         
             // // change

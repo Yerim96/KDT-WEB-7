@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습13</title>
+    <style>
+    
+   
+            
+    </style>
+</head>
+<body>
+    <div>
+      
+            <p>값:</p>
+            <input type="text" id="value1" ></input>
+    
+ 
+            <p>값2:</p>
+            <input type="text" id="value2" ></input>
+   
+        
+            <p>연산자:</p>
+            <input type="text" id="cal" ></input>
+    
+
+        <div id="but">
+            <button>계산</button>
+            <button>초기화</button>
+        </div>
+            <p>결과</p>
+            <input id="result">
+
+    </div>
+
+    <h2>val()</h2>
+    <input type="text"/>
+    <button onclick="getValue()">값 가져오기</button>
+    <button onclick="setValue()">값 설정하기</button>
+    <br />
+
+    <script>
+        const value1= document.getElementById('#value1');
+        function getValue(){
+        let value =$('input').val(); //value
+        console.log(value); }
+
+
+        //설정하기
+
+        function setValue(){
+            $('input').val('패쓰워드를 입력하세요');
+        }
+    </script>
+</body>
+</html>

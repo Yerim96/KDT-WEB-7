@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+< lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +9,7 @@
 
     <title>Document</title>
 </head>
-<body>
+<br>
     <!-- 선택된 요소 -->
     <ul class="colors">
         <li class="orange">orange</li>
@@ -55,6 +55,44 @@
     <button onclick="emptyJs()">JS바꾸기(지우기)</button>
     <button onclick="emptyJquery()">Jquery바꾸기(지우기)</button>
     
+    </br>
+    <!-- 5.2 -->
+    <!-- 요소 탐색 , 클래스 제어  -->
+
+    <h6>요소 탐색</h6>
+    <div class="root">
+        <div class="parent">
+            <div class="child1">자식1</div>
+            <div class="child2">자식2</div>
+            <div class="child3">자식3</div>
+        </div>
+    </div>
+
+    <button onclick="findParent()">부모찾기</button>
+    
+    <button onclick="findParents()">조상찾기</button>
+
+
+    <button onclick="findNex()">다음 형제 찾기</button>
+    <button onclick="findPre()">이전 형제 찾기</button>
+    <button onclick="findChildren()">모든 자식찾기 </button>
+    
+    <!-- class제어 -->
+    <!-- class 제어는 많이 하지만 id 제어는 많이하지 않는다. 페이지당거의 하나기 때문에 -->
+    <!-- 제어:추가,삭제 -->
+    <!-- class로 css를 제어하기위해 클래스를 제어한다. -->
+    <h6>클래스 제어하기</h6>
+    <p class="origin-class">기존클래스</p>
+    <button onclick="addClassJS()">자바스크립트 클래스 추가</button>
+    <button onclick="addClass()">제이쿼리 클래스 추가</button>
+    <button onclick="removeClassJs()">js 클래스 삭제</button>
+    <button onclick="removeClass()">제이쿼리 클래스 삭제</button>
+    <br />
+    <!-- 클래스가 있는지 확인하기 -->
+    <button onclick="hasClass()">클래스 유무 확인</button>
+    <button onclick="hasClassJS()">js 클래스 유뮤 확인</button>
+    <button onclick="toggleClass()">클래스 토글</button>
+    <button onclick="toggleClassJS()">js클래스 토글</button>
     
     <script src="append.js"></script>
     <!-- 제이쿼리가 동적이라 스크립트를 밑에?? 정확히 무슨말이징 -->

@@ -7,11 +7,19 @@
     <title>Document</title>
 </head>
 <body>
-    <div onclick="alert('div 태그를 클릭')">클릭</div>
+    <!-- 자바스크립트 event 방식 3가지 -->
+    <!-- 1.인라인방식
+    2. onxxxx방식
+    3. addEventListener -->
+
+    <!-- 첫번째방식 -->
+
+    <h6 onclick="alert('클릭하셨습니다!')">클릭하세요</h6>
     <button id="button">버튼</button>
-    <div id="mouseover">마우스를 올리세요</div>
-    <button id="button2">이벤트 리스너</button>
-    <button id="button3">마우스 엔터</button>
+    <div id="mouseover">마우스 올리세요</div>
+    <button id="button2">이벤트리스너</button>
+    <button id="button3">마우스엔터</button> 
+
 
     <button class="btn">bt1</button>
     <button class="btn">bt2</button>
@@ -20,52 +28,56 @@
     <button class="btn">bt5</button>
 
     <script>
-        const btn = document.getElementById("button");
-        btn.onclick = function(){
-            alert('버튼태그를 클릭');
+        //객체를 만들고 기능을 걸어주는 방식. id button객체를 가져와 
+        //함수로 alert기능을 걸어주거라.
+
+        const button=document.getElementById('button'); //버튼 객체 가져오기
+        button.onclick = function(){
+            alert('버튼 태그를 클릭');
         }
 
-        const over = document.getElementById('mouseover');
-        function onMouseOver(){
-            console.log("마우스 오버");
-            
-            over.style.color="red";
+        //mouseover 이벤트 걸어주기
+        let mouse= document.querySelector('#mouseover');
+        // mouse.onmouseover = function(){
+        //     mouse.style.color="red";
+        // }
+        // function Overfun(){
+        //     mouse.style.color='blue';
+        // }
+        // mouse.onmouseover=Overfun;
+        // mouse.onmouseover=function funmu(){
+        //     mouse.style.color='blue';
+        // };
+        // function func(){
+        //     alert('마우스 인식');
+        // };
+        // mouse.onmouseover=func;
+
+        //onxxxx방식에도 2가지가 있다. 이벤트와 객체를 연결해줄때 함수도 같이 쓸것이냐
+        //아니면 함수 내부는 따로 작성할것인가? 일단 이벤트와 객체는 연결되어야한다.
+        function func(){
+            alert('죽고시퍼');
         }
-        over.onmouseover=onMouseOver;
 
-        function onMouseOut(){
-            over.style.color="blue";
-        }
-        over.onmouseout=onMouseOut;
+        mouse.onclick=func;
+        
 
-
-        // addEventListener
-
-        const bt2= document.querySelector('#button2');
-        bt2.addEventListener('click',
-        function(){
-            alert('이벤트 리스너 방식');
-        });
-
+        //3번쨰 방식 addEventListnener
+        //아이디 버튼2의 객체를 가지고와라.
+        //객체와 이벤트를 따로 연결하지 않고, 전용리스너를 만들어 사용함.
+        let button2=document.getElementById('button2');
+        button2.addEventListener('click',function(){
+            alert('이벤트리스너 방식입니다.');
+        })
 
         function onMouseEnter(){
-            alert('on mouse event 방식입니다.');
-            const divs= document.createElement('div');
-            bt2.append(divs);
+            const divs=document.createElement('div');
+            button2.append(divs); //이벤트리스너에 div추가
         }
-        const btn3 =document.querySelector("#button3");
-        btn3.addEventListener('mouseenter',onMouseEnter);
-
-        //응용
-        const btns= document.querySelectorAll('.btn');
-        function bgcolor(){
-            this.style.backgroundColor="blue";
-        }
-
-        for(let btn of btns){
-            console.log(btn);
-            btn.addEventListener('click',bgcolor);
-        }
+        const button3 = document.getElementById('button3');
+        button3.addEventListener('click',onMouseEnter);
+        // button2.remove('div');
+        //마우스엔터를 클릭하면 이벤트리스너 button2에 div 추가.
     </script>
 </body>
 </html>
