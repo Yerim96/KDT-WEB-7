@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- 실습 따라하면서 작성 -->
+    <nav class="navbar navbar-expand bg-body-tertiary">
+
+        <!-- 가로 너비를 꽉 채워준다 container-fluid -->
+        <div class="container-fluid"> 
+          <a class="navbar-brand" href="#">DOkyo Olympics</a>
+          <div class="collapse navbar-collapse">
+
+            <!-- pt는 패딩탑 -->
+            <ul class="navbar-nav me-auto"> 
+              <li class="nav-item">
+                <a class="nav-link " aria-current="page" href="#">Home</a>
+              </li>
+          
+              <li class="nav-item dropdown">
+                <a class="nav-link btn btn-danger dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  olympic sport
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">양궁</a></li>
+                  <li><a class="dropdown-item" href="#">배구</a></li>
+                  <li><a class="dropdown-item" href="#">펜싱</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">축구.</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a data-bs-toggle="modal" data-bs-target="#exampleModal" class="nav-link" href="#">Medals</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link disabled">Disabled</a>
+            </li>
+            </ul>
+            <form class="d-flex" role="search">
+
+                <!-- margin left-2 -->
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+      <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="과일1.jpg" class="d-block w-100" alt="..." style="height:200px">
+          </div>
+          <div class="carousel-item">
+            <img src="icecream1.png" class="d-block w-100" alt="..." style="height:200px">
+          </div>
+          <div class="carousel-item">
+            <img src="과일1.jpg" class="d-block w-100" alt="..." style="height:200px">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <!-- 플렉스 그냥 넣으면안되고 속성일아 같이써야함 d -->
+      <div class="d-flex justify-content-center mt-3">
+          <p class="fs-5 fw-bold">Sport</p>
+      </div>
+
+
+        <div class="d-flex justify-content-evenly">
+            <div class="card" style="width: 10rem;">
+                <img src="과일1.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+
+              <div class="card" style="width: 10rem;">
+                <img src="과일1.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+              <div class="card" style="width: 10rem;">
+                <img src="과일1.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+              <div class="card" style="width: 10rem;">
+                <img src="과일1.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+              <div class="card" style="width: 10rem;">
+                <img src="과일1.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+          
+      </div>
+      
+
+      
+      <!-- 모달 -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <!-- <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div> -->
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

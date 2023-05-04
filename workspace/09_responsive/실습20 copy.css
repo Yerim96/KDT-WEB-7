@@ -1,0 +1,73 @@
+header{
+    display: flex;
+    background-color: blueviolet;
+}
+
+h1{
+    color:beige;
+    flex-grow:8;
+}
+
+.icon-menu{
+    flex-grow:1;
+    text-align:right;
+}
+
+.icon-menu i{
+  font-size: 3rem; /* 아이콘 크기를 2rem으로 설정합니다. */
+    align-items: center;
+}
+
+
+
+.list-menu{
+    display: none;
+} 
+
+/* .toggle-menu-container{
+    display:flex;
+    flex-direction: column;
+    background-color:violet;
+} */
+
+.toggle-menu-container{
+   
+display: flex;
+  flex-direction: column;
+} 
+
+.d-none{
+    height: 100px;
+     /* display:flex;
+    flex-direction: column; */
+    background-color:violet;
+    display: flex;
+  flex-direction: column;
+} 
+
+@media (min-width:992px){
+    .list-menu{
+        display:block;
+        text-align: center;
+        padding-top: 30px;
+        color:beige;
+    }.icon-menu{
+        display: none;
+    }.toggle-menu{
+        display: none;
+
+    }
+}
+
+
+@media (max-width:992px){
+    .list-menu{
+        display:none;
+    }.icon-menu{
+        display: block;
+    }.d-none{
+        display: block;
+
+    }
+}
+

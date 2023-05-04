@@ -1,0 +1,38 @@
+.parent{
+    display: flex;
+}
+
+.child{
+    margin-left: 10px;
+    width:100px;
+    height:100px;
+    background-color: black;
+    border:1px solid red ;
+    
+}
+
+
+
+/*min-width  최소 600이상 */
+/*max-width  최소 600이하 */
+@media (max-width: 700px){ 
+    .parent{
+        /* 방향지정 */
+        /* flex-direction: column;
+        flex-direction: row;
+        flex-direction: column-reverse; */
+
+        /* flex-direction: row-reverse; */
+        display:block;
+    }
+    .child{
+        background-color: aqua;
+    }
+}
+
+
+@media(min-width: 922px){
+    .navbar{
+        display:block;
+    }
+}
