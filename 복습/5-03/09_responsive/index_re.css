@@ -1,0 +1,99 @@
+html{
+    font-size: 16px;
+}
+
+.box{
+    margin-bottom:30px;
+}
+
+.px{
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
+}
+
+.per-parent{
+    width: 100px;
+    height: 100px;
+    background-color:plum;
+    position: relative; 
+
+}
+
+.per-child{
+    width:50%;
+    height:50%;
+    background-color: azure;
+    position:absolute;
+    bottom:0px;
+}
+
+.em{
+    /* 상위 폰트사이즈가 16이니까 16*2, 32*2... 로 상대적으로 커진다. */
+    font-size:2em; 
+}
+
+.rem{
+    font-size:2rem;
+}
+
+.vw{
+    /* 707 1033 */
+    width:30vw;
+    height:20vw;
+    background-color: sienna;
+
+}
+
+/* 비율맞는지 확인 */
+
+
+.vh{
+    height: 20vh;
+    width: 30vh;
+    background-color: skyblue;
+}
+
+/* css변수 */
+
+:root{
+    --color-primary:#1FAEEE;
+    --height-header:100px;
+    --dark:#000000;
+
+}
+
+.my-div{
+    background-color: var(--color-primary);
+    width:200px;
+    height: var(--height-header);
+}
+
+.dark{
+    background-color: var(--dark);
+    width:200px;
+    height:var(--height-header);
+}
+
+li{
+    color:var(--color-primary);
+}
+
+span{
+    --color:green;
+}
+
+#media{
+    background-color: aqua;
+    width:100%;
+    height:100px;
+
+}
+
+/* 최소한 300은되어야할떄. 즉 300이상일떄 */
+@media (min-width:600px) and (max-width:1000px){
+    #media{
+        background-color: aquamarine;
+        
+    }
+}

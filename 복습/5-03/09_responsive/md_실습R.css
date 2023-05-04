@@ -1,0 +1,23 @@
+
+.parent{
+    display: flex;
+}
+
+.child{
+    width:100px ;
+    height:100px;
+    background-color: bisque;
+    margin-left: 10px;
+
+}
+
+
+@media(max-width:500px){
+    .parent{
+        flex-direction: column;
+       
+    }.child{
+        background-color: aqua;
+        margin-bottom: 10px;
+    }
+}
