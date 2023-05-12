@@ -1,73 +1,60 @@
 header{
-    display: flex;
     background-color: blueviolet;
+    display: flex;
+    
 }
 
-h1{
-    color:beige;
-    flex-grow:8;
+.list-menu{
+   
+    text-align: right;
+    flex-grow: 1;
+    margin-top: 30px;
 }
 
 .icon-menu{
-    flex-grow:1;
-    text-align:right;
-}
-
-.icon-menu i{
-  font-size: 3rem; /* 아이콘 크기를 2rem으로 설정합니다. */
-    align-items: center;
-}
-
-
-
-.list-menu{
     display: none;
-} 
+    text-align: right;
+    flex-grow: 2;
+    margin-top: 10px;
+    font-size:40px;
+    
+}
 
-/* .toggle-menu-container{
-    display:flex;
-    flex-direction: column;
-    background-color:violet;
-} */
 
 .toggle-menu-container{
-   
-display: flex;
-  flex-direction: column;
-} 
+    display:flex;
+    flex-direction: column;
+    background-color: aqua;
+}
 
 .d-none{
-    height: 100px;
-     /* display:flex;
-    flex-direction: column; */
-    background-color:violet;
-    display: flex;
-  flex-direction: column;
-} 
+    display: none;
+}
 
+
+/* <!-- TODO
+- [ ] 너비가 992px 이상일 때, 메뉴1~4 리스트가 보여짐 (메뉴 아이콘 가리기, css)
+- [ ] 너비가 992px 미만일 때, 메뉴 아이콘이 보여짐 (메뉴1~4 리스트 가리기, css)
+  - [ ] Bootstrap Icon 사용
+- [ ] 너비가 992px 미만일 때, 메뉴 아이콘 클릭시 .toggle-menu 가 나타남 (javascript)
+--> */
 @media (min-width:992px){
     .list-menu{
-        display:block;
-        text-align: center;
-        padding-top: 30px;
-        color:beige;
+        display: block;
     }.icon-menu{
         display: none;
-    }.toggle-menu{
+    }.d-none{
         display: none;
-
     }
 }
 
 
 @media (max-width:992px){
+    
     .list-menu{
-        display:none;
+        display: none;
     }.icon-menu{
         display: block;
-    }.d-none{
-        display: block;
-
     }
+        
 }
-

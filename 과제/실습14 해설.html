@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h2>여기는 방명록</h2>
+
+
+
+
+
+
+
+    <!-- 라벨링해서 text박스로 갈수있도록 연결함 -->
+    <label for="writer">작성자</label>
+    <input type="text" id="writer"> <br />
+
+    <label for="content">내용</label>
+    <input type="text" id="content"> <br />
+    <button onclick="register()">등록</button>
+
+    <table border="1" cellpadding="5" cellspacing="1s">
+        <tr>
+            <th>작성자</th>
+            <th>내용</th>
+            <th>작성일</th>
+        </tr>
+    </table>
+
+    <script>
+        function register() {
+            
+            // 작성자 값을 가져옴
+            const writer=document.getElementById('writer').value;
+            // 내용값을 가져옴
+            const content=document.getElementById('content').value;
+            //table값을 가져옴(넣어야하니까)
+            const table=document.querySelector('table');
+            console.log(writer,content,table);
+
+            //table에 td를 만들어 넣기 위해 tr을 만들어줌.
+
+            const tr=document.createElement('tr');
+            
+            //tr을 만들어 줬으니 각 td를 만들어준다.
+            const tdWriter=document.createElement('td');
+            //만든 tdwriter에 입력받은 이름값을 넣어준다.
+            tdWriter.textContent=writer;
+
+            //content도 td를 만들어준다.
+            const tdcontent= document.createElement('td');
+            tdcontent.textContent=content;
+
+            //입력할 날짜 값도 만들어준다.
+            const date=new Date().toLocaleDateString();
+            //날짜를 입력할 td도 만들어준다.
+            const tddate=document.createElement('td');
+            tddate.textContent = date;
+
+            tr.append(tdWriter,tdcontent,tddate)
+            table.append(tr);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            // const name = $('#writer').val()
+            // const content = $('#content').val()
+            // const table = $('table')
+            // const tr = document.createElement('tr')
+            // console.log(tr)
+
+            // const tdWriter = document.createElement('td')
+            // tdWriter.textContent = name
+
+            // const tdContent = document.createElement('td')
+            // tdContent.textContent = content
+
+            // const date = new Date().toLocaleString()
+            // const tdDate = document.createElement('td')
+            // tdDate.textContent = date
+            // tr.append(tdWriter, tdContent, tdDate)
+            // table.append(tr)
+            // $('#writer').val('')
+            // $('#content').val('')
+        }
+    </script>
+</body>
+</html>

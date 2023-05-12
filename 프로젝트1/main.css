@@ -1,0 +1,21 @@
+.header{
+    height: 100px;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo{
+    width: 8rem;
+}
+body{
+    background-color: #fee5ca;
+    height: 1000px;
+}
+
+.allergy{
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
+}

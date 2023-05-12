@@ -14,45 +14,52 @@
 <body>
     <div>
       
-            <p>값:</p>
-            <input type="text" id="value1" ></input>
+            <lable for="value1">값:</lable>
+            <input type="number" id="value1" ></input> <br />
     
  
-            <p>값2:</p>
-            <input type="text" id="value2" ></input>
+            <lable for="value2">값2:</lable>
+            <input type="number" id="value2" ></input> <br />
    
-        
-            <p>연산자:</p>
-            <input type="text" id="cal" ></input>
-    
+            <lable for="cal">연산자:</lable>
+            <input type="text" id="cal" ></input>   <br />
 
-        <div id="but">
-            <button>계산</button>
-            <button>초기화</button>
-        </div>
-            <p>결과</p>
-            <input id="result">
+            <button onclick="calc()">계산</button>
+            <button onclick="reset()">초기화</button> <br />
+            <label for="result">결과</label>
+            <input type='text' id="result" disabled>
 
     </div>
 
-    <h2>val()</h2>
-    <input type="text"/>
-    <button onclick="getValue()">값 가져오기</button>
-    <button onclick="setValue()">값 설정하기</button>
-    <br />
-
     <script>
-        const value1= document.getElementById('#value1');
-        function getValue(){
-        let value =$('input').val(); //value
-        console.log(value); }
+        function calc(){
+            const value1= document.getElementById('value1').value;
+            const value2= document.getElementById('value2').value;
+            const cal= document.getElementById('cal').value;
+            console.log(value1,value2,cal, typeof(cal));
 
-
-        //설정하기
-
-        function setValue(){
-            $('input').val('패쓰워드를 입력하세요');
+            let result;
+            if(cal =='+'){
+                result=Number(value1)+Number(value2);
+            }else if(cal=='-'){
+                result=Number(value1)-Number(value2);
+                
+            }else if(cal=='/'){
+                result=Number(value1)/Number(value2);
+                
+            }
+            
+            document.getElementById('result').value=result;
+        
         }
+
+        function reset(){
+            document.getElementById('value1').value=''
+            document.getElementById('value2').value=''
+            document.getElementById('cal').value=''
+            document.getElementById('result').value=''
+        }
+
     </script>
 </body>
 </html>

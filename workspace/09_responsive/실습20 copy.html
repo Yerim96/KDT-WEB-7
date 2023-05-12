@@ -28,28 +28,29 @@
       <h1>LOGO</h1>
       <a href="#" class="icon-menu"><i class="bi bi-list"></i></a>
       <nav class="list-menu">
-        <a href="#">메뉴1</a>
-        <a href="#">메뉴2</a>
-        <a href="#">메뉴3</a>
-        <a href="#">메뉴4</a>
+        <a href="#">list 메뉴1</a>
+        <a href="#">list 메뉴2</a>
+        <a href="#">list 메뉴3</a>
+        <a href="#">list 메뉴4</a>
       </nav>
     </header>
     
     <!-- 토글 메뉴 -->
     <nav class="toggle-menu d-none">
       <div class="toggle-menu-container">
-        <a href="#">메뉴1</a>
-        <a href="#">메뉴2</a>
-        <a href="#">메뉴3</a>
-        <a href="#">메뉴4</a>
+        <a href="#">토글 메뉴1</a>
+        <a href="#">토글 메뉴2</a>
+        <a href="#">토글 메뉴3</a>
+        <a href="#">토글 .메뉴4</a>
       </div>
     </nav>
     <script>
       // - [ ] 아이콘 클릭시 메뉴 열리기
       // .icon-menu 클릭했을 때 .toggle-menu 요소에 .d-none 클래스 넣었다 뻈다 하기
       const icon=document.querySelector('i'); //아이콘 객체를 가져옴(클릭위해서)
-      const toggle=document.querySelector('.toggle-menu'); //토클메뉴가져옴.
-      
+       const toggle=document.querySelector('.toggle-menu'); //토클메뉴가져옴.
+      console.log(toggle);
+
       const header=document.querySelector('header');
       // const body=document.querySelector('body');
       // const nav=document.querySelectorAll('nav')[1];
