@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 비동기처리
+        // function first(){
+        //     second()
+        //     console.log('first')
+        // }
+        // function second(){
+        //     third()
+        //     console.log('second')
+        // }
+        // function third(){
+        //     console.log('third')
+        // }
+        // first();
+
+
+
+
+
+        //동기처리
+        //런타임이 함수를 모두 확인하고 간다음에 실행시킴. 
+        //setTimeout에 딜레이가 있다면 다음 함수를 먼저 실행시킴
+        // function goMart(){ //런타임이 고마트 확이
+        //     console.log("마트에서 어떤 음료를 살지 고민한다.");
+        // }
+        // function pinkDrink(){
+        //     setTimeout(function(){
+        //         console.log('고민 끝')
+        //         product='제로콜라'
+        //         price =2000;
+        //     }, 3000) //삼초후 처리
+        //     //pay가 바로 실행되었기 때문에 undefind가 뜸.
+        //     //그래서 콜백함수를 사용하기도함.
+            
+        // }
+        // function pay(product,price){
+        //     console.log(`상품명: ${product}, 가격:${price}`)
+        // }
+
+        // let product;
+        // let price;
+        // goMart();
+        // pinkDrink();
+        // pay(product,price);
+
+
+
+
+        // //콜백함수를 이용한 동기처리. 제로콜라 나오게하기
+        function goMart(){ //런타임이 고마트 확이
+            console.log("마트에서 어떤 음료를 살지 고민한다.");
+        }
+
+        //콜백
+        // function pinkDrink(callback){ //매개변수로 함수를 던져줌.
+        //     setTimeout(function(){
+        //         console.log('고민 끝')
+        //         product='제로 콜라'
+        //         price=2000;
+        //         taste='맛이씀';
+        //         callback(product,price,taste);  //핑크드링크가 끝나야 callback함수 불러옴.
+        //     },3000) //삼초후 처리
+        //     //pay가 바로 실행되었기 때문에 undefind가 뜸.
+        //     //그래서 콜백함수를 사용하기도함.
+            
+        // }
+        // function pay(product,price,taste){
+        //     console.log(`상품명: ${product}, 가격:${price}, 맛:${taste}`)
+        // }
+
+        // let product;
+        // let price;
+        // let taste;
+        // goMart();
+        // pinkDrink(pay);
+        // //pay(product,price);
+
+
+        //promise1. pinkdrink를 늦게 사용하기위해사용
+        function promise1(flag){  //ture false를 가져올때는 flag 매개변수를 많이 쓴다.
+            return new Promise(function(resolve,reject){
+                if(flag){
+                    resolve(`promise 상태는 fulfilled! then으로 연결됩니다. \n 이떄의 flag가 ${flag}입니다.`);
+                }else{
+                    reject(`promise 상태는 rejected! catch으로 연결됩니다. \n 이떄의 flag는 ${flag}입니다.`);
+                }
+            })
+        }
+        promise1(false)
+        .then(function(result){ //성공했을떄 쓰는 함수then
+            console.log(result)
+        })
+        .catch(function(err){
+            console.log(err)
+        })
+
+        function goMart(){
+            console.log('마트에서 어떤 음료를 살지 고민한다.')
+        }
+        function pinkDrink(){
+            return new Promise(function(resolve,reject){ //객체 선언하고 두가지 콜백함수
+                setTimeout(function(){
+                    console.log('고민끝');
+                    product='제로 콜라'
+                 price=2000;
+                    resolve()
+                },3000)
+            })
+        }
+        function pay(){
+            console.log(`상품명: ${product}, 가격:${price}`)
+        }
+
+        let product;
+        let price;
+        goMart();
+        pinkDrink().then(pay).catch(function(){
+            console.log('err');
+        });
+
+
+        
+
+    </script>
+</body>
+</html>

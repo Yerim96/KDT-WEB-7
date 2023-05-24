@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //콜백함수를 이용.콜백지옥.
+        // function add(n1,n2,cb){
+        //     setTimeout(function(){
+        //         let result = n1 + n2;
+        //         cb(result);
+        //     },1000)
+        // }
+        // function mul(n, cb){
+        //     setTimeout(function(){
+        //         let result = n * 2;
+        //         cb(result);
+        //     },700)
+        // }
+
+        // function sub(n, cb){
+        //     setTimeout(function(){
+        //         let result = n - 1;
+        //         cb(result);
+        //     }, 500)
+        // }
+        // //콜백함수로 불러오기 
+        // add(4,3, function(x){
+        //     console.log('1: ',x)
+        //     mul(x, function(y){
+        //         console.log('2: ', y)
+        //         sub(y,function(z){
+        //             console.log('3: ',z)
+        //         })
+        //     })
+        // })
+
+
+
+        // 위에있는 함수를 promise 객체로만들어보기  체이닝ㅇ으로 then을 이용해 처리
+        //함수에 함수를 넣고 하는것이 아닌 함수를 프로미즈 객체로 만들고 then객체로 가져온다.
+
+        // function add(n1,n2){
+        //     return new Promise(function(resolve,reject){
+        //         setTimeout(function(){
+        //         let result = n1 + n2;
+        //         resolve(result);
+        //     },1000)
+        //     })
+        // }
+        // function mul(n){
+        //     return new Promise(function(resolve,reject){
+        //         setTimeout(function(){
+        //         let result = n * 2;
+        //         resolve(result);
+        //     },700)
+        //     })
+       
+        // }
+
+        // function sub(n){
+        //     return new Promise(function(resolve,reject){
+        //         setTimeout(function(){
+        //         let result = n - 1;
+        //         resolve(result);
+        //     }, 500)
+        //     })
+       
+        // }
+
+        // //프로미스 체이닝. 순차적 작업.
+        // //위 then이 성공했을때 아래 then을 실행시켜 return
+        // add(4,3)
+
+        // .then(function(result){
+        //         console.log('1: ', result)
+        //     return mul(result); //받아서 다시 mul 리턴 
+        // })
+
+        // .then(function(result){
+        //         console.log('2: ', result)
+        //     return sub(result);
+        // })
+
+        // .then(function(result){
+        //         console.log('3: ', result)
+        // })
+
+
+
+
+        // //위 코드에서 의도적 에러처리
+        // function add(n1,n2){
+        //     return new Promise(function(resolve,reject){
+        //         setTimeout(function(){
+        //         let result = n1 + n2;
+        //         resolve(result);
+        //     },1000)
+        //     })
+        // }
+        // function mul(n){
+        //     return new Promise(function(resolve,reject){
+        //         setTimeout(function(){
+        //         let result = n * 2;
+        //         resolve(result);
+        //     },700)
+        //     })
+       
+        // }
+
+        // function sub(n, cb){
+        //     return new Promise(function(resolve,reject){
+        //         setTimeout(function(){
+        //         let result = n - 1;
+        //         // resolve(result);
+        //         reject('의도적 에러')
+        //     }, 500)
+        //     })
+       
+        // }
+
+        // //프로미스 체이닝. 순차적 작업.
+        // //위 then이 성공했을때 아래 then을 실행시켜 return
+        // add(4,3)
+
+        // .then(function(result){
+        //         console.log('1: ', result)
+        //     return mul(result); //받아서 다시 mul 리턴 
+        // })
+
+        // .then(function(result){
+        //         console.log('2: ', result)
+        //     return sub(result);
+        // })
+
+        // .then(function(result){
+        //         console.log('3: ', result)
+        // })
+
+        // .catch(function(err){
+        //     console.log(err)
+        // })
+    </script>
+</body>
+</html>

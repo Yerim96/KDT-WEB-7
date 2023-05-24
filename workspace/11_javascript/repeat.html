@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //map과 foreach의 차이
+        //map은 리턴이 있다.
+        const list =[10,20,30,40,50]
+        // console.log(...list);
+
+        for(let i =0; i<list.length; i++){
+            console.log(list[i]);
+        }
+
+        let items;
+        items =list.map((value, index)=>{ //새로운 배열만들기.
+            return value + "대"
+        })
+        console.log(items);
+
+
+        //forEach는 리턴없고 단순 계산만 출력가능
+        list.forEach((value, index)=>{
+            console.log(value+index)
+        });
+
+
+        //filter
+        const words =['dog', 'cat', 'rabbit','apple', 'wow']
+        let result = words.filter((word)=>word.length >3)
+        console.log(result)
+
+        let result2 =words.filter((word)=>{ //화살표를 사용할때 {}를 만나면 return꼭해줘야함
+            return word.includes('a');
+        })
+        console.log(result2);
+
+
+        //reduce 
+        //물건들 모든 값들 다 더할때 사용하기도함. 배열에있는 요소들 더함.
+        let result3 = list.reduce((acc , val)=>{
+            return acc+ val
+        })
+        console.log(result3);
+    </script>
+</body>
+</html>

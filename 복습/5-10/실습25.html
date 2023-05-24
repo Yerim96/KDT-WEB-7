@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function changeBgColor(newColor, delay) {
+            return new Promise(function(resolve, reject){
+
+                setTimeout(function () {
+                    document.body.style.backgroundColor = newColor;
+                    resolve();
+                }, delay);
+
+
+            })
+        }
+
+
+
+        // changeBgColor('red',1000)
+        // .then (function(){
+        //     return changeBgColor('orange',1000)
+        // })
+        // .then (function(){
+        //     return changeBgColor('yellow',1000)
+        // })
+        // .then (function(){
+        //     return changeBgColor('green',1000)
+        // })
+        // .then (function(){
+        //     return changeBgColor('blue',1000)
+        // })
+        
+        //async await 사용하기
+        async function exec(){
+    await changeBgColor('red',1000)
+        await changeBgColor('orange',1000)
+       await changeBgColor('yellow',1000)
+      await changeBgColor('green',1000)
+        }
+        exec();
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+    <body>
+        <h4>Login</h4>
+        <form action="/result26" name="register" method="GET">
+          <label for="login">로그인</label>
+          <input type="text" name="login" id="login" />
+          <br />
+          <label for="password">비밀번호</label>
+          <input type="password" name="password" id="password" />
+          <br />
+          <button type="button" onclick="axiosPost()">axios post 제출</button>
+        </form>
+        <div class="result"></div>
+    
+        <script>
+          const result = document.querySelector(".result");
+          function axiosPost() {
+        console.log("axios Post!!!!!!!!!!!!!!");
+
+        const form = document.forms["register"];
+        const data = {
+            login: form.login.value,
+            password: form.password.value,
+        };
+
+        axios({
+          method: "POST",
+          url: "/axios",
+          data: data, //post일때는 data . 키와 벨류가 같을때는 하나만 써도 가능함.
+        }).then(function (abc) {
+          console.log(abc);
+          const { login, password } = abc.data;
+          //위처럼 구조분해하지 않고 작성한 코드
+          // const name= abc.data.name;
+          // const gender=abc.data.gender;
+          if(login ==='banana' && password==4321){
+          result.textContent = `로그인성공`}
+          else{
+            result.textContent = `입력한 아이디 또는 비밀번호를 잘 못 입력했습니다.`
+          }
+        });
+      }
+
+        </script>
+      </body>
+  </body>
+</html>

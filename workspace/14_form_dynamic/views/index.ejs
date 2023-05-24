@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <form name="register">
+      <label for="name">이름</label>
+      <input type="text" name="name" id="name" required />
+      <br />
+
+      <fieldset>
+        <legend>성별</legend>
+        <input type="radio" name="gender" value="남자" id="man" />
+        <label for="man">남자</label>
+        <input type="radio" name="gender" value="여자" id="woman" />
+        <label for="woman">여자</label>
+      </fieldset>
+      <br />
+
+      <!-- ajax -->
+      <button type="button" onclick="ajaxGet()">ajax get 제출</button>
+      <button type="button" onclick="ajaxPost()">ajax post 제출</button>
+
+      <!-- axios -->
+      <button type="button" onclick="axiosGet()">axios get 제출</button>
+      <button type="button" onclick="axiosPost()">axios post 제출</button>
+      <!-- fetch -->
+      <button type="button" onclick="fetchGet()">fetch get 제출</button>
+      <button type="button" onclick="fetchPost()">fetch post 제출</button>
+    </form>
+    <div class="result"></div>
+
+    <script>
+      const result = document.querySelector(".result");
+
+      function ajaxGet() {
+        console.log("ajaxGET!!!!!!!!!!!!");
+        //폼 선택하기. name으로 가져오기
+        const form = document.forms["register"];
+        // const form = document.querySelector(".register");
+
+        //dir은 객체의 데이터를 볼 수 있음.
+        console.dir(form);
+        console.dir(form.name);
+        // console.dir(form.name.value);
+
+        const data = {
+          name: form.name.value,
+          gender: form.gender.value,
+        };
+
+        //ajax 비동기 통신
+        $.ajax({
+          //url ,type,data를 백엔드에서 보냄.
+          url: "/ajax",
+          type: "GET",
+
+          //서버로 보내는 데이터. 제이슨형태 위의 const data를 보낸다.
+          //키값과 벨류값이 같을때는 하나만 써도 상관없다. data:data를 data로 작성가능.
+          data: data,
+
+          //백엔드에서 다시 받는것
+          success: function (data) {
+            //매개변수라 data가 아니어도 상과넝ㅄ음
+            console.log(data); //local호스트에 찍힌이유
+            result.textContent = `Get: 이름은 ${data.name}이고요, 성별은 ${data.gender}`;
+          },
+        });
+      }
+
+      //   function ajaxPost() {
+      //     console.log("ajax POST~~");
+      //     const form = document.forms["register"];
+      //     console.dir(form);
+      //     console.dir(form.name);
+      //     // console.dir(form.name.value);
+
+      //     const data = {
+      //       name: form.name.value,
+      //       gender: form.gender.value,
+      //     };
+
+      //     //ajax
+      //     $.ajax({
+      //       type: "POST",
+      //       url: "/ajax",
+      //       data: data,
+      //       success: function (data) {
+      //         //매개변수라 data가 아니어도 상과넝ㅄ음
+      //         console.log(data); //local호스트에 찍힌이유
+      //         result.textContent = `Post 이름은 ${data.name}이고요, 성별은 ${data.gender}`;
+      //       },
+      //     });
+      //   }
+
+      function ajaxPost() {
+        console.log("ajax POST!!!!!");
+        //폼 선택하기
+        const form = document.forms["register"];
+        //const form = document.querySelector(".register");
+        console.dir(form);
+        console.dir(form.name.value);
+        const data = {
+          name: form.name.value,
+          gender: form.gender.value,
+        };
+        //ajax
+        $.ajax({
+          type: "POST",
+          url: "/ajax",
+          data: data,
+          success: function (abc) {
+            console.log(abc);
+            result.textContent = `POST: 이름은 ${abc.name}이고요. 성별은 ${abc.gender}입니ekq.`;
+          },
+        });
+      }
+
+      //   function axiosGet() {
+      //     console.log("axios GET!!~");
+      //     const form = document.forms["register"];
+
+      //     const data = {
+      //       name: form.name.value,
+      //       gender: form.gender.value,
+      //     };
+
+      //     axios({
+      //       url: "/axios",
+      //       method: "GET",
+      //       params: data,
+      //     }).then(function (data) {
+      //       console.log(data.data);
+      //       const { name, gender } = abc.data;
+      //       result.textContent = `axios get: 이름은 ${name} 성별은 ${gender}`;
+      //     });
+      //   }
+
+      function axiosGet() {
+        console.log("axios GET!!!!!!");
+        //폼 선택하기
+        const form = document.forms["register"];
+        const data = {
+          name: form.name.value,
+          gender: form.gender.value,
+        };
+        axios({
+          url: "/axios",
+          method: "GET",
+          params: data, //get일때는 params
+        }).then(function (abc) {
+          console.log(abc.data);
+          const { name, gender } = abc.data;
+          result.textContent = `axios GET: 이름은 ${name}, 성별은 ${gender}`;
+        });
+      }
+
+      function axiosPost() {
+        console.log("axios Post!!!!!!!!!!!!!!");
+
+        const form = document.forms["register"];
+        const data = {
+          name: form.name.value,
+          gender: form.gender.value,
+        };
+
+        axios({
+          method: "POST",
+          url: "/axios",
+          data: data, //post일때는 data . 키와 벨류가 같을때는 하나만 써도 가능함.
+        }).then(function (abc) {
+          console.log(abc);
+          const { name, gender } = abc.data;
+          //위처럼 구조분해하지 않고 작성한 코드
+          // const name= abc.data.name;
+          // const gender=abc.data.gender;
+          result.textContent = `axios post : 이름은 ${name}, 성별은 ${gender}`;
+        });
+      }
+
+      //   function fetchGet() {
+      //     console.log("fetch GET!!!");
+      //     const form = document.forms["register"];
+
+      //     // fetch쓰는 방법 2가지
+      //     // 1번방법
+      //     // const query= `?name=${form.name.value}$gender=${form.gender.value}`;
+      //     // fetch(`/fetch${query}`);
+
+      //     //2번방법
+      //     fetch(`/fetch??name=${form.name.value}$gender=${form.gender.value}`, {
+      //       method: "GET",
+      //     })
+      //       .then(function (abc) {
+      //         // console.log(abc);
+      //         return abc.json(); //제이슨으로 바꾼 후 다시 데이터로바꿔줘야함.
+      //       })
+      //       .then(function (data) {
+      //         // console.log(data);
+      //         const { name, gender } = data;
+      //         result.textContent = `fetch get: 이름은${name} 성별은${gender}`;
+      //       });
+      //   }
+
+      function fetchGet() {
+        console.log("fetch GET!!!!!!");
+        const form = document.forms["register"];
+        //1번방법
+        // const query = `?name=${form.name.value}&gender=${form.genver.value}`;
+        // fetch(`/fetch${query}`)
+        //2번방법
+        fetch(`/fetch?name=${form.name.value}&gender=${form.gender.value}`, {
+          method: "GET",
+        })
+          .then(function (abc) {
+            //  console.log(abc);
+            return abc.json();
+          })
+          .then(function (data) {
+            //  console.log(data);
+            const { name, gender } = data;
+            result.textContent = `fetch GET: 이름은 ${name} 성별은 ${gender}`;
+          });
+      }
+
+      function fetchPost() {
+        console.log("fetch post!!!!");
+        const form = document.forms["register"];
+        const data = {
+          name: form.name.value,
+          gender: form.gender.value,
+        };
+
+        fetch("/fetch", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        })
+          .then(function (abc) {
+            console.log(abc);
+            return abc.json();
+          })
+          .then(function (data) {
+            const { name, gender } = data;
+            result.textContent = `fetch post: 이름은 ${name} 성별은 ${gender}`;
+          });
+      }
+    </script>
+  </body>
+</html>

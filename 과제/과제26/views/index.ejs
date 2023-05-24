@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- //form 받기 -->
+    <h2>실습26. get으로 정보받기</h2>
+    <!-- getForm으로 보냄 -->
+    <form action="/getForm" name="login" method="get">
+      <input type="text" name="id" placeholder="ID" />
+      <br />
+
+      <!-- 성별 -->
+      <input type="radio" /> 남자 <input type="radio" /> 여자
+      <br />
+
+      <!-- 생년월일 -->
+      <select name="year" id="">
+        <option value="1998">1998</option>
+        <option value="1999">1999</option>
+        <option value="2000">2000</option>
+      </select>
+
+      <select name="month" id="">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+
+      <select name="day" id="">
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">13</option>
+      </select>
+
+      <br />
+
+      <!-- 관심사 -->
+      <input type="checkbox" />여행 <input type="checkbox" />패션
+      <input type="checkbox" />음식
+
+      <br />
+      <!-- 버튼타입으로 submit -->
+      <span>
+        <button type="submit">회원가입</button>
+      </span>
+    </form>
+  </body>
+</html>
