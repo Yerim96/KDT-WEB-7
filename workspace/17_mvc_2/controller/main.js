@@ -6,7 +6,7 @@ exports.main = (req, res) => {
 };
 
 exports.comments = (req, res) => {
-  res.render("comments", { commentInfos: comment.commentInfos() }); // render함수는 view 엔진에 있는
+  res.render("comments", { commentInfos: comment.commentInfos() });
 };
 
 exports.comment = (req, res) => {

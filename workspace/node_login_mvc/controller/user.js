@@ -12,31 +12,30 @@ exports.login = (req, res) => {
   // //사용자전체를 받는 배열
   // const users = [];
   // //아이디만 받는 배열
-  // for (const user of userDatas) {
-  // }
+  // const userIds = [];
+
   // for (const user of userDatas) {
   //   users.push({
   //     id: user.split("//")[0],
   //     pw: user.split("//")[1],
   //     name: user.split("//")[2],
   //   });
+  //   userIds.push(user.split("//")[0]);
   // }
   // console.log(users);
   // console.log(userIds);
   // //아이디 일치 확인
-  // const idx = userIds.indexOf(req.body.id);
+  // const idx = userIds.indexOf(req.body.id); //사용자가 입력한 id
   // console.log(idx);
   // if (idx !== -1) {
   //   console.log("아이디있음");
   //   if (user[idx].pw === req.body.pw) {
   //     res.send({ result: true, userInfo: req.body, msg: "성공하였습니다." });
   //   } else {
-  //     console.log("아이디없음");
-  //     res.send({ result: false });
+  //     res.send({ result: false, msg: "로그인 실패" });
   //   }
   // }
   //실습1
-  res.render("index");
   if (
     req.body.id === userModel.users()[0].id &&
     req.body.pw === userModel.users()[0].pw
