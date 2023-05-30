@@ -2,13 +2,16 @@ const express = require("express");
 const app = express();
 const PORT = 8000;
 
+//템플릿 연결
 app.set("view engine", "ejs");
-app.use("/view", express.static(__dirname + "/views"));
+app.use("/views", express.static(__dirname + "/views"));
 
+//body-parser
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-const visitorRouter = require("./routes/visitor");
+//routes
+const visitorRouter = require("./routes/index");
 app.use("/visitor", visitorRouter);
 
 app.get("*", function (req, res) {
@@ -16,5 +19,5 @@ app.get("*", function (req, res) {
 });
 
 app.listen(PORT, () => {
-  console.log(`http://localhost:${PORT}`);
+  console.log(`http://loaclhost:${PORT}`);
 });

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <h4>프로필 페이지</h4>
+
+    <form id="profile">
+      <fieldset>
+        <legend>프로필</legend>
+        id<input type="text" id="userId" placeholder="사용자 아이디" />
+
+        <br />
+        name<input type="text" id="name" placeholder="사용자 이름" />
+        <br />
+        pw<input
+          type="text"
+          id="password"
+          placeholder="사용자 비밀번호"
+        /><br />
+        <button type="button" onclick="createprofile()">로그인</button>
+      </fieldset>
+    </form>
+    <div id="divtext"></div>
+    <script>
+      const divtext = document.querySelector("#divtext");
+      function createprofile() {
+        const form = document.forms["profile"];
+        console.log(form);
+        console.log(form.userId.value);
+        console.log(form.name.value);
+        console.log(form.password.value);
+        axios({
+          method: "POST",
+          url: "/user/signin",
+          data: {
+            userId: form.userId.value,
+            name: form.name.value,
+            password: form.password.value,
+          },
+        })
+          .then((res) => {
+            console.log(res.data);
+            return res.data;
+          })
+          .then((data) => {
+            const html = `
+              <div id="divtext">${data.result}</div>       
+          `;
+            divtext.innerHTML = html;
+
+            if (data.result == "false") {
+            }
+          });
+      }
+    </script>
+  </body>
+</html>

@@ -2,8 +2,8 @@ const express = require("express");
 const controller = require("../controller/visitor");
 const router = express.Router();
 
-//localhost:8000/visitor
-router.get("/", controller.main);
+//localhost:ROPT
+router.get("/", controller.index);
 
 //localhost:8000/visitor/list
 router.get("/list", controller.CgetVisitors);

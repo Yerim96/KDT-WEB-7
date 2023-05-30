@@ -4,87 +4,57 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Document</title>
   </head>
   <body>
-    <form name="visitor">
-      <fieldset>
-        <legend>방명록 등록</legend>
-        <input type="text" id="name" placeholder="사용자 이름" /> <br />
-        <input type="'text" id="comment" placeholder="방명록" /> <br />
-        <button type="button" onclick="createVisitor()">등록</button>
-      </fieldset>
-    </form>
-    <hr />
-    <!-- 방명록 전체보이기 -->
-    <table border="1" cellspacing="0">
-      <thead>
-        <tr>
-          <th>id</th>
-          <th>작성자</th>
-          <th>방명록</th>
-          <th>수정</th>
-          <th>삭제</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% for(let i = 0; i < data.length; i++) {%>
-        <tr id="tr_<%= data[i].id %>">
-          <td><%= data[i].id%></td>
-          <td><%= data[i].name%></td>
-          <td><%= data[i].comment%></td>
-          <td><button type="button">수정</button></td>
-          <td><button type="button">삭제</button></td>
-        </tr>
+    <h4>방명록 입니다다다다~ 수상한 방명록~</h4>
+    <form id="register">
+        <fieldset>
+            <legend>방명록 ^^</legend>
+            <label for="name">name<input type="text" name="name" placeholder="이름을 입력하세요" ></label></br>
+            <label for="comment">comment<input type="text" name="comment" placeholder="남길말" ></label></br>
+        
+            <button type="button" onclick="createVisitor()">등록</button>
+        </fieldset>
+        </form>
+        <hr />
 
-        <% } %>
-      </tbody>
-    </table>
 
-    <script>
-      const tbody = document.querySelector("tbody");
-      function createVisitor() {
-        const form = document.forms["visitor"];
-        console.log(form);
-        console.log(form.name.value);
-        if (form.name.value === 0 || form.comment.value.length === 0) {
-          alert("이름 또는 방명록 기입하세요!");
-          return;
-        }
-
-        if (form.name.value.length > 10) {
-          alert("이름은 10글자 미만으로 작성해주세요");
-          return;
-        }
-
-        axios({
-          method: "POST",
-          url: "/visitor/write",
-          data: {
-            name: form.name.value,
-            comment: form.comment.value,
-          },
-        })
-          .then((res) => {
-            console.log(res.data);
-            return res.data;
-          })
-          .then((data) => {
-            //insertAdjacentHTML:특정 요소에 HTML 추가
-            //innserHTML:기존 노드 지우고 덮어씌우기. insertAjacentHTML과 비슷하지만 다름.
-            const html = `
-            <tr id="tr_${data.id}">
-          <td>${data.id}</td>
-          <td>${data.name}</td>
-          <td>${data.comment}</td>
-          <td><button type="button">수정</button></td>
-          <td><button type="button">삭제</button></td>
-           </tr>
-            `;
-            tbody.insertAdjacentHTML("beforeend", html);
-          });
-      }
-    </script>
+        <table border="1" cellspacing="0">
+            <thead>
+                <tr>
+                  <th>id</th>
+                  <th>작성자</th>
+                  <th>방명록</th>
+                  <th>수정</th>
+                  <th>삭제</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% for(let i = 0; i < test.length; i++) {%>
+                <tr id="tr_<%= test[i].id %>">
+                  <td>
+                    <a href="/visitor/get?id=<%= test[i].id %>" target="_blank">
+                      <%= test[i].id %>
+                    </a>
+                  </td>
+                  
+                  <td><%= test[i].name %></td>
+                  <td><%= test[i].comment %></td>
+                  <td>
+                    <button type="button" onclick="editVisitor('<%= test[i].id %>')">
+                      수정1
+                    </button>
+                  </td>
+                  <!-- 몇번을 수정하는지 함수에 인자값을 넣어줘야함. -->
+                  <td>
+                    <button type="button" onclick="deleteVisitor('<%= test[i].id%>')">
+                      삭제1
+                    </button>
+                  </td>
+                </tr>
+        
+                <% } %>
+        </table>
   </body>
 </html>
