@@ -62,7 +62,6 @@ exports.Cpost_signin = async (req, res) => {
         res.send({ result: false });
       }
     });
-  console.log("user", user.dataValues.pw);
   //------------------------------------------------
   //암호화 처리한 sqeulize (bcrypt, crypto)
   // const user = await models.user.findOne({
@@ -70,7 +69,7 @@ exports.Cpost_signin = async (req, res) => {
   //     userid: req.body.userid,
   //   },
   // });
-  //암호화된 비밀번호끼리 비교 bcrypt
+  // // 암호화된 비밀번호끼리 비교 bcrypt
   // const ok = await bcrypt.compare(req.body.pw, user.dataValues.pw);
   // console.log(ok);
   // if (ok) {
@@ -78,7 +77,7 @@ exports.Cpost_signin = async (req, res) => {
   // } else {
   //   res.send({ result: false });
   // }
-  //crypto
+  // // crypto
   // console.log(createHashedPassword(req.body.pw), user.dataValues.pw);
   // if (createHashedPassword(req.body.pw) === user.dataValues.pw) {
   //   res.send({ result: true, data: user.dataValues });
