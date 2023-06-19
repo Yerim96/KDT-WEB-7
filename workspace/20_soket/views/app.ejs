@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h4>점심시간 socket복습</h4>
+    <input type="text" id="nickname" placeholder="닉네임" />
+    <input type="text" id="room" placeholder="방이름" />
+    <button type="button" onclick="entry()">입장</button>
+
+    <div class="chat-box">
+      <div id="chat-list" class="chat-list"></div>
+      <select id="nick-list"></select>
+      <input type="text" id="message" />
+      <button type="button" onclick="sendMessage()">전송</button>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      const socket = io();
+      let myNick;
+
+      socket.on("connect", () => {
+        console.log(`client Connected >>는`, socket.id);
+      });
+
+      socket.on("notice", (msg) => {
+        const list = document.querySelector("#chat-list");
+        list.insertAdjacentHTML("beforeend", `<div>${msg}</div`);
+      });
+      function entry() {
+        const id = document.querySelector("#nickname").value;
+        const room = document.querySelector("#room").value;
+        socket.emit("setNick", id, room);
+      }
+
+      socket.on("updateNick", (data) => {
+        let option = "<option value='all'>전체</option>";
+        for (const key in data) {
+          console.log(key, data[key]);
+          option += `<option value=${key}>${data[key]}</option>`;
+        }
+        document.querySelector("#nick-list").innerHTML = option;
+      });
+
+      socket.on("entryFinish", (data) => {
+        myNick = data;
+        const nickbox = document.querySelector("#chat-list");
+        const div = document.createElement("div");
+        const divChat = document.createElement("div");
+
+        if (myNick === data.nick) {
+          div.classList.add("my-chat");
+        } else {
+          div.classList.add("your-chat");
+        }
+        divChat.textContent = `${data.nick}`;
+      });
+    </script>
+  </body>
+</html>
