@@ -1,0 +1,61 @@
+.test {
+  background-color: burlywood;
+  color: orange;
+  font-size: 50px;
+  text-align: center;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.input {
+  margin-left: 20%;
+  margin-right: 20%;
+  text-align: center;
+}
+
+.divbox {
+  display: flex;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+.red {
+  background-color: red;
+  position: absolute;
+  height: 10%;
+  width: 10%;
+}
+.yellow {
+  background-color: yellow;
+  position: absolute;
+  margin-left: 10%;
+  height: 20%;
+  width: 10%;
+}
+.green {
+  background-color: green;
+  position: absolute;
+  margin-left: 20%;
+  height: 30%;
+  width: 10%;
+}
+.blue {
+  background-color: blue;
+  position: absolute;
+  margin-left: 30%;
+  height: 40%;
+  width: 10%;
+}
+.navy {
+  background-color: navy;
+  position: absolute;
+  margin-left: 40%;
+  height: 50%;
+  width: 10%;
+}
+.purple {
+  background-color: purple;
+  position: absolute;
+  margin-left: 50%;
+  height: 60%;
+  width: 10%;
+}

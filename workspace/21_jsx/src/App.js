@@ -1,3 +1,4 @@
+import Clock from "./Clock";
 import Larva from "./Larva";
 
 //컴포넌트 구조
@@ -16,6 +17,7 @@ function App() {
         바보
       </div>
       <label htmlFor="hi"></label>
+      <Clock />
     </>
   );
 }
