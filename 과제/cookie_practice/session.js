@@ -35,6 +35,7 @@ app.get("/", (req, res) => {
 app.get("/login", (req, res) => {
   res.render("login");
 });
+
 app.post("/login", (req, res) => {
   if (req.body.id === userInfo.id && req.body.pw === userInfo.pw) {
     req.session.user = req.body.id;

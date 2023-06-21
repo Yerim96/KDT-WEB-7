@@ -14,48 +14,60 @@
 }
 
 .divbox {
-  display: flex;
-  margin-left: 20%;
-  margin-right: 20%;
+  display: inline-flex;
+  /* margin-left: 20%;
+  margin-right: 20%; */
 }
 .red {
   background-color: red;
-  position: absolute;
+  width: 100px;
+  height: 100px;
+  /* position: absolute;
   height: 10%;
-  width: 10%;
+  width: 10%; */
 }
 .yellow {
   background-color: yellow;
-  position: absolute;
+  width: 100px;
+  height: 100px;
+  /* position: absolute;
   margin-left: 10%;
   height: 20%;
-  width: 10%;
+  width: 10%; */
 }
 .green {
   background-color: green;
-  position: absolute;
+  width: 100px;
+  height: 100px;
+  /* position: absolute;
   margin-left: 20%;
   height: 30%;
-  width: 10%;
+  width: 10%; */
 }
 .blue {
   background-color: blue;
-  position: absolute;
+  width: 100px;
+  height: 100px;
+  /* position: absolute;
   margin-left: 30%;
   height: 40%;
-  width: 10%;
+  width: 10%; */
 }
 .navy {
   background-color: navy;
-  position: absolute;
+  width: 100px;
+  height: 100px;
+  /* position: absolute;
   margin-left: 40%;
   height: 50%;
-  width: 10%;
+  width: 10%; */
 }
 .purple {
   background-color: purple;
-  position: absolute;
+  width: 100px;
+  height: 100px;
+  /* position: absolute;
   margin-left: 50%;
   height: 60%;
-  width: 10%;
+  width: 10%; */
 }
