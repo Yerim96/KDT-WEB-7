@@ -1,0 +1,41 @@
+:root {
+  --color-header: rgb(22, 30, 179);
+  --color-body: rgb(162, 203, 250);
+  --height-header: 60px;
+  --color-shadow: rgb(154, 149, 149);
+}
+.postList {
+  text-align: center;
+  background-color: var(--color-header);
+  font-size: 25px;
+  font-weight: 500;
+  height: var(--height-header);
+  line-height: var(--height-header);
+  color: white;
+  text-shadow: 2px 2px 4px black;
+}
+
+.postItem {
+  text-align: left;
+  background-color: var(--color-body);
+  width: 50%;
+  margin: 50px auto;
+  padding: 20px 30px;
+  box-shadow: 4px 4px 20px var(--color-shadow);
+}
+
+.postBox {
+  display: flex;
+}
+
+.postBox .id {
+  color: blue;
+}
+
+.postBox .title {
+  color: gray;
+}
+
+.body {
+  font-weight: 500;
+}

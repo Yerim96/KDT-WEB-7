@@ -12,9 +12,9 @@ function App() {
       {/* <Repeat /> */}
       {/* <Alphabet /> */}
       {/* <Filter /> */}
-      <Pt52 />
+      {/* <Pt52 /> */}
       {/* <Pt52_answer /> */}
-      {/* <Pt52_re /> */}
+      <Pt52_re />
     </>
   );
 }
