@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import LifeCycleFuncChild from "./LifeCycleFuncChild";
 
 function LifeCycleFunc() {
@@ -12,6 +12,19 @@ function LifeCycleFunc() {
   const changeNumber = () => {
     setNumber(number + 1);
   };
+
+  useEffect(() => {
+    console.log("visible이벤트 실행시작동");
+
+    //unmount
+    return () => {
+      console.log("unmount 이벤트 실행시 작동");
+    };
+  }, [visible]);
+
+  useEffect(() => {
+    console.log("number 이벤트 실행시작동");
+  }, [number]);
 
   return (
     <>

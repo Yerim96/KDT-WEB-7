@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div>토큰값 인증받기</div>
+
+    <script>
+      const code = new URL(window.location.href).searchParams.get("code");
+      console.log(code);
+      axios({
+        //토큰받아오기
+        method: "POST",
+        url: "https://kauth.kakao.com/oauth/token",
+        headers: "Content-Type: application/x-www-form-urlencoded",
+        data: {
+          grant_type: "authorization_code",
+          client_id,
+          REDIRECT_URI,
+          code,
+        },
+      })
+        .then((res) => {
+          axios({
+            method: "GET",
+            url: "https://kapi.kakao.com/v2/user/me",
+            headers: `Authorization:Bearer ${res.data.access_token}`,
+          });
+        })
+        .then((res) => {
+          console.log(res.data);
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div>토큰값인증받기</div>
+    <!-- <script>
+      const code = new URL(window.location.href).searchParams.get("code");
+      console.log(code);
+      const client_id = "";
+      const redirect_uri = "http://localhost:3000/oauth";
+      axios({
+        method: "POST",
+        url: "https://kauth.kakao.com/oauth/token",
+        headers: "Content-Type: application/x-www-form-urlencoded",
+        data: {
+          grant_type: "authorization_code",
+          client_id,
+          redirect_uri,
+          code, 
+        },
+      }).then((res) => {
+        console.log(res.data);
+        axios({
+          method: "GET",
+          url: "https://kapi.kakao.com/v2/user/me",
+          headers: `Authorization: Bearer ${res.data.access_token}`,
+        }).then((res) => {
+          console.log(res.data);
+        });
+      });
+    </script> -->
+  </body>
+</html>

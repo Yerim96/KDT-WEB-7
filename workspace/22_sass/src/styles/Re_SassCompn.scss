@@ -1,0 +1,49 @@
+// .Re_SassCompn {
+//   display: flex;
+
+//   .box {
+//     width: 100px;
+//     height: 100px;
+
+//     //pseudo
+//     &.red {
+//       background-color: red;
+//     }
+//     &.orange {
+//       background-color: orange;
+//     }
+//     &.yellow {
+//       background-color: yellow;
+//     }
+//   }
+// }
+
+@import "./_utils.scss";
+
+$color-red: red;
+$color-orange: orange;
+$color-yellow: yellow;
+
+@mixin color-box($size) {
+  width: $size;
+  height: $size;
+  border: 1px solid black;
+}
+
+.Re_SassCompn {
+  display: flex;
+  .box {
+    @include color-box(200px);
+    &.red {
+      background-color: $color-red;
+    }
+
+    &:hover {
+      $animation-duration: 1s;
+      $box-animation: $animation-duration * 2;
+      cursor: pointer;
+      transform: translate(-20px);
+      transition: transform $box-animation;
+    }
+  }
+}

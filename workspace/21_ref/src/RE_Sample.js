@@ -79,6 +79,7 @@ function Re_Sample() {
 
   const enter = (event) => {
     if (event.key === "Enter") {
+      console.log(event);
       createwriter();
     }
   };

@@ -25,9 +25,9 @@ function LifeCycleFuncChild(props) {
   //   });
 
   //text가 번경될떄.
-  useEffect(() => {
-    console.log("text | update");
-  }, [text]);
+  // useEffect(() => {
+  //   console.log("text | update");
+  // }, [text]);
   return (
     <>
       <p>LifeCycleFuncChild {props.number}</p>
